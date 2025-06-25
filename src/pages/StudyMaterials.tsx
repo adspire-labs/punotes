@@ -1,17 +1,23 @@
-
 import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card, CardContent, CardDescription, CardHeader, CardTitle
+} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue
+} from '@/components/ui/select';
+import {
+  Tabs, TabsContent, TabsList, TabsTrigger
+} from '@/components/ui/tabs';
 import Navigation from '@/components/Navigation';
-import { ExternalLink, BookOpen, FileText, HelpCircle, Search } from 'lucide-react';
+import {
+  ExternalLink, BookOpen, FileText, HelpCircle, Search
+} from 'lucide-react';
 
 const StudyMaterials = () => {
   const [selectedStream, setSelectedStream] = useState('all');
   const [selectedSemester, setSelectedSemester] = useState('all');
-  const [selectedSubject, setSelectedSubject] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   const streams = [
@@ -35,97 +41,114 @@ const StudyMaterials = () => {
     { value: '8', label: '8th Semester' }
   ];
 
-  // Sample data - replace with your actual Google Drive links
+  const allTypes = [
+    'Notes',
+    'Question Bank',
+    'Solutions',
+    'Imp Files',
+    'Literature'
+  ];
+
   const studyMaterials = [
     {
       id: 1,
-      stream: 'bca',
-      semester: '1',
+      stream: ['bca'],
+      semester: ['1'],
       subject: 'Computer Fundamentals',
       type: 'Notes',
       driveLink: 'https://drive.google.com/drive/folders/sample1',
-      description: 'Complete notes for Computer Fundamentals including basics of computer hardware and software.'
+      description: 'Complete notes for Computer Fundamentals.'
     },
     {
       id: 2,
-      stream: 'bca',
-      semester: '1',
+      stream: ['bca'],
+      semester: ['1'],
       subject: 'Mathematics I',
-      type: 'Old Questions',
+      type: 'Question Bank',
       driveLink: 'https://drive.google.com/drive/folders/sample2',
-      description: 'Previous year question papers for Mathematics I with solutions.'
+      description: 'Previous year question papers for Mathematics I.'
     },
     {
       id: 3,
-      stream: 'bca',
-      semester: '2',
+      stream: ['bca'],
+      semester: ['2'],
       subject: 'Programming in C',
-      type: 'Notes',
+      type: 'Solutions',
       driveLink: 'https://drive.google.com/drive/folders/sample3',
-      description: 'Complete C programming notes with examples and practice problems.'
+      description: 'C Programming solutions and exercises.'
     },
     {
       id: 4,
-      stream: 'bba',
-      semester: '1',
+      stream: ['bba', 'bbs'],
+      semester: ['1', '3'],
       subject: 'Principles of Management',
-      type: 'Syllabus',
+      type: 'Literature',
       driveLink: 'https://drive.google.com/drive/folders/sample4',
-      description: 'Official syllabus for Principles of Management course.'
+      description: 'Shared subject in BBA 1st and BBS 3rd.'
     },
     {
       id: 5,
-      stream: 'be',
-      semester: '1',
+      stream: ['be'],
+      semester: ['1'],
       subject: 'Engineering Mathematics',
-      type: 'Notes',
+      type: 'Imp Files',
       driveLink: 'https://drive.google.com/drive/folders/sample5',
-      description: 'Comprehensive notes for Engineering Mathematics covering all topics.'
+      description: 'Important documents and references.'
+    },
+    {
+      id: 6,
+      stream: ['bsc'],
+      semester: ['2'],
+      subject: 'Physics Notes',
+      type: 'Notes',
+      driveLink: 'https://drive.google.com/drive/folders/sample6',
+      description: 'Detailed notes for BSc Physics.'
     }
   ];
 
   const filteredMaterials = studyMaterials.filter(material => {
-    const matchesStream = selectedStream === 'all' || material.stream === selectedStream;
-    const matchesSemester = selectedSemester === 'all' || material.semester === selectedSemester;
-    const matchesSearch = searchQuery === '' || 
+    const matchesStream = selectedStream === 'all' ||
+      (Array.isArray(material.stream)
+        ? material.stream.includes(selectedStream)
+        : material.stream === selectedStream);
+
+    const matchesSemester = selectedSemester === 'all' ||
+      (Array.isArray(material.semester)
+        ? material.semester.includes(selectedSemester)
+        : material.semester === selectedSemester);
+
+    const matchesSearch = searchQuery === '' ||
       material.subject.toLowerCase().includes(searchQuery.toLowerCase()) ||
       material.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       material.type.toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     return matchesStream && matchesSemester && matchesSearch;
   });
 
+  const materialsByType = Object.fromEntries(
+    allTypes.map(type => [type, filteredMaterials.filter(m => m.type === type)])
+  );
+
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'Notes':
-        return <BookOpen className="h-5 w-5 text-blue-600" />;
-      case 'Old Questions':
-        return <HelpCircle className="h-5 w-5 text-green-600" />;
-      case 'Syllabus':
-        return <FileText className="h-5 w-5 text-purple-600" />;
-      default:
-        return <FileText className="h-5 w-5 text-gray-600" />;
+      case 'Notes': return <BookOpen className="h-5 w-5 text-blue-600" />;
+      case 'Question Bank': return <HelpCircle className="h-5 w-5 text-green-600" />;
+      case 'Solutions': return <FileText className="h-5 w-5 text-orange-600" />;
+      case 'Imp Files': return <FileText className="h-5 w-5 text-red-600" />;
+      case 'Literature': return <FileText className="h-5 w-5 text-purple-600" />;
+      default: return <FileText className="h-5 w-5 text-gray-600" />;
     }
   };
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'Notes':
-        return 'bg-blue-100 text-blue-800';
-      case 'Old Questions':
-        return 'bg-green-100 text-green-800';
-      case 'Syllabus':
-        return 'bg-purple-100 text-purple-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
+      case 'Notes': return 'bg-blue-100 text-blue-800';
+      case 'Question Bank': return 'bg-green-100 text-green-800';
+      case 'Solutions': return 'bg-orange-100 text-orange-800';
+      case 'Imp Files': return 'bg-red-100 text-red-800';
+      case 'Literature': return 'bg-purple-100 text-purple-800';
+      default: return 'bg-gray-100 text-gray-800';
     }
-  };
-
-  // Group materials by type for categorized view
-  const materialsByType = {
-    Notes: filteredMaterials.filter(m => m.type === 'Notes'),
-    'Old Questions': filteredMaterials.filter(m => m.type === 'Old Questions'),
-    Syllabus: filteredMaterials.filter(m => m.type === 'Syllabus')
   };
 
   const MaterialCard = ({ material }: { material: any }) => (
@@ -141,21 +164,22 @@ const StudyMaterials = () => {
         </div>
         <CardTitle className="text-lg">{material.subject}</CardTitle>
         <CardDescription>
-          <div className="space-y-1">
-            <p><span className="font-medium">Stream:</span> {material.stream.toUpperCase()}</p>
-            <p><span className="font-medium">Semester:</span> {material.semester}</p>
-          </div>
+          <p>
+            <strong>Stream:</strong>{' '}
+            {(Array.isArray(material.stream) ? material.stream : [material.stream])
+              .map(s => s.toUpperCase())
+              .join(', ')}
+          </p>
+          <p>
+            <strong>Semester:</strong>{' '}
+            {(Array.isArray(material.semester) ? material.semester : [material.semester]).join(', ')}
+          </p>
         </CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-gray-600 mb-4 text-sm">{material.description}</p>
         <Button asChild className="w-full">
-          <a 
-            href={material.driveLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center justify-center"
-          >
+          <a href={material.driveLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
             <ExternalLink className="mr-2 h-4 w-4" />
             Access on Google Drive
           </a>
@@ -167,21 +191,17 @@ const StudyMaterials = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Study Materials</h1>
           <p className="text-gray-600">
-            Browse and access study materials organized by stream, semester, and subject. 
-            All materials are hosted on Google Drive for easy access.
+            Browse categorized study materials hosted on Google Drive.
           </p>
         </div>
 
-        {/* Search and Filters */}
         <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
           <div className="space-y-4">
-            {/* Search Bar */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <Input
@@ -191,8 +211,7 @@ const StudyMaterials = () => {
                 className="pl-10"
               />
             </div>
-            
-            {/* Filters */}
+
             <div>
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Filter Materials</h2>
               <div className="grid md:grid-cols-3 gap-4">
@@ -211,7 +230,7 @@ const StudyMaterials = () => {
                     </SelectContent>
                   </Select>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Semester</label>
                   <Select value={selectedSemester} onValueChange={setSelectedSemester}>
@@ -229,11 +248,10 @@ const StudyMaterials = () => {
                 </div>
 
                 <div className="flex items-end">
-                  <Button 
+                  <Button
                     onClick={() => {
                       setSelectedStream('all');
                       setSelectedSemester('all');
-                      setSelectedSubject('all');
                       setSearchQuery('');
                     }}
                     variant="outline"
@@ -247,53 +265,43 @@ const StudyMaterials = () => {
           </div>
         </div>
 
-        {/* Results */}
-        <div className="mb-4">
-          <p className="text-gray-600">
-            Showing {filteredMaterials.length} materials {searchQuery && `for "${searchQuery}"`}
-          </p>
-        </div>
+        <p className="text-gray-600 mb-4">
+          Showing {filteredMaterials.length} materials {searchQuery && `for "${searchQuery}"`}
+        </p>
 
-        {/* Categorized View */}
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid grid-cols-6">
             <TabsTrigger value="all">All ({filteredMaterials.length})</TabsTrigger>
-            <TabsTrigger value="notes">Notes ({materialsByType.Notes.length})</TabsTrigger>
-            <TabsTrigger value="questions">Questions ({materialsByType['Old Questions'].length})</TabsTrigger>
-            <TabsTrigger value="syllabus">Syllabus ({materialsByType.Syllabus.length})</TabsTrigger>
+            {allTypes.map((type) => {
+              const tabValue = type.toLowerCase().replace(/\s/g, '');
+              return (
+                <TabsTrigger key={tabValue} value={tabValue}>
+                  {type} ({materialsByType[type]?.length || 0})
+                </TabsTrigger>
+              );
+            })}
           </TabsList>
-          
+
           <TabsContent value="all" className="mt-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {filteredMaterials.map((material) => (
                 <MaterialCard key={material.id} material={material} />
               ))}
             </div>
           </TabsContent>
-          
-          <TabsContent value="notes" className="mt-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {materialsByType.Notes.map((material) => (
-                <MaterialCard key={material.id} material={material} />
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="questions" className="mt-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {materialsByType['Old Questions'].map((material) => (
-                <MaterialCard key={material.id} material={material} />
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="syllabus" className="mt-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {materialsByType.Syllabus.map((material) => (
-                <MaterialCard key={material.id} material={material} />
-              ))}
-            </div>
-          </TabsContent>
+
+          {allTypes.map((type) => {
+            const tabValue = type.toLowerCase().replace(/\s/g, '');
+            return (
+              <TabsContent key={tabValue} value={tabValue} className="mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {materialsByType[type]?.map((material) => (
+                    <MaterialCard key={material.id} material={material} />
+                  ))}
+                </div>
+              </TabsContent>
+            );
+          })}
         </Tabs>
 
         {filteredMaterials.length === 0 && (
@@ -301,7 +309,7 @@ const StudyMaterials = () => {
             <BookOpen className="h-16 w-16 text-gray-400 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">No materials found</h3>
             <p className="text-gray-600">
-              Try adjusting your search or filters, or check back later for new materials.
+              Try adjusting your search or filters.
             </p>
           </div>
         )}
