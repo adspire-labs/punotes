@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Card, CardContent, CardDescription, CardHeader, CardTitle
 } from '@/components/ui/card';
@@ -21,6 +21,22 @@ const StudyMaterials = () => {
   const [selectedStream, setSelectedStream] = useState('all');
   const [selectedSemester, setSelectedSemester] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [studyMaterials, setStudyMaterials] = useState(studyMaterialsData);
+
+  // Load materials from localStorage on component mount
+  useEffect(() => {
+    const savedMaterials = localStorage.getItem('studyMaterials');
+    if (savedMaterials) {
+      try {
+        const parsedMaterials = JSON.parse(savedMaterials);
+        if (parsedMaterials.length > 0) {
+          setStudyMaterials(parsedMaterials);
+        }
+      } catch (error) {
+        console.error('Error parsing saved materials:', error);
+      }
+    }
+  }, []);
 
   const streams = [
     { value: 'all', label: 'All Streams' },
@@ -50,8 +66,6 @@ const StudyMaterials = () => {
     'Imp Files',
     'Literature'
   ];
-
-  const studyMaterials = studyMaterialsData;
 
   const filteredMaterials = studyMaterials.filter(material => {
     const matchesStream = selectedStream === 'all' ||
@@ -219,7 +233,7 @@ const StudyMaterials = () => {
         <Tabs defaultValue="all" className="w-full">
           <div className="overflow-x-auto">
             <TabsList className="grid w-max min-w-full grid-cols-6 mb-6">
-              <TabsTrigger value="all" className="text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="all" className="text-xs sm:text-sm px-2 sm:px-3 whitespace-nowrap">
                 All ({filteredMaterials.length})
               </TabsTrigger>
               {allTypes.map((type) => {
