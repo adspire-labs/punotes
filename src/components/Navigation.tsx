@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { BookOpen, Menu, Settings } from 'lucide-react';
+import { BookOpen, Menu } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ const Navigation = () => {
     { name: 'Study Materials', href: '/study-materials', current: location.pathname === '/study-materials' },
     { name: 'About', href: '/about', current: location.pathname === '/about' },
     { name: 'Submit Materials', href: '/submit-materials', current: location.pathname === '/submit-materials' },
-    { name: 'Admin Panel', href: '/admin-materials', current: location.pathname === '/admin-materials' },
+    { name: 'Support Us', href: '/support-us', current: location.pathname === '/support-us' },
   ];
 
   return (

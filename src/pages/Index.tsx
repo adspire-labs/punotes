@@ -61,7 +61,11 @@ const Index = () => {
                   Browse Materials
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 w-full sm:w-auto">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-blue-700 text-white border-2 border-white hover:bg-blue-600 hover:border-blue-100 w-full sm:w-auto"
+              >
                 <Link to="/submit-materials">
                   <Upload className="mr-2 h-5 w-5" />
                   Submit Materials
@@ -159,6 +163,7 @@ const Index = () => {
                 <li><Link to="/study-materials" className="text-gray-400 hover:text-white transition-colors">Study Materials</Link></li>
                 <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
                 <li><Link to="/submit-materials" className="text-gray-400 hover:text-white transition-colors">Submit Materials</Link></li>
+                <li><Link to="/support-us" className="text-gray-400 hover:text-white transition-colors">Support Us</Link></li>
               </ul>
             </div>
             <div>
@@ -169,8 +174,11 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400">
+            <p className="text-gray-400 mb-2">
               © 2024 PUNotes. Made with ❤️ by PU students for PU students.
+            </p>
+            <p className="text-gray-500 text-xs">
+              As this website is community driven, it may contain copyrighted content. We respect the rights of copyright owners. If you are a copyright owner, or are authorized to act on behalf of one, let us know, we will remove it.
             </p>
           </div>
         </div>

@@ -6,8 +6,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import Navigation from '@/components/Navigation';
-import { Plus, Download, Copy, Trash2 } from 'lucide-react';
+import { Plus, Download, Copy, Trash2, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface StudyMaterial {
@@ -23,16 +24,18 @@ interface StudyMaterial {
 const AdminMaterials = () => {
   const { toast } = useToast();
   const [materials, setMaterials] = useState<StudyMaterial[]>([]);
+  const [customStreams, setCustomStreams] = useState<string[]>([]);
+  const [newStreamName, setNewStreamName] = useState('');
   const [formData, setFormData] = useState({
-    stream: '',
-    semester: '',
+    streams: [] as string[],
+    semesters: [] as string[],
     subject: '',
     type: '',
     driveLink: '',
     description: ''
   });
 
-  const streams = [
+  const defaultStreams = [
     { value: 'bca', label: 'BCA (Bachelor of Computer Application)' },
     { value: 'bba', label: 'BBA (Bachelor of Business Administration)' },
     { value: 'bbs', label: 'BBS (Bachelor of Business Studies)' },
@@ -59,15 +62,50 @@ const AdminMaterials = () => {
     'Literature'
   ];
 
+  const allStreams = [...defaultStreams, ...customStreams.map(stream => ({ value: stream.toLowerCase(), label: stream }))];
+
+  const handleAddCustomStream = () => {
+    if (newStreamName.trim() && !customStreams.includes(newStreamName.trim())) {
+      setCustomStreams([...customStreams, newStreamName.trim()]);
+      setNewStreamName('');
+      toast({
+        title: "Success",
+        description: "New stream added successfully!"
+      });
+    }
+  };
+
+  const handleRemoveCustomStream = (streamToRemove: string) => {
+    setCustomStreams(customStreams.filter(stream => stream !== streamToRemove));
+  };
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleStreamChange = (streamValue: string, checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      streams: checked 
+        ? [...prev.streams, streamValue]
+        : prev.streams.filter(s => s !== streamValue)
+    }));
+  };
+
+  const handleSemesterChange = (semesterValue: string, checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      semesters: checked 
+        ? [...prev.semesters, semesterValue]
+        : prev.semesters.filter(s => s !== semesterValue)
+    }));
+  };
+
   const handleAddMaterial = () => {
-    if (!formData.stream || !formData.semester || !formData.subject || !formData.type || !formData.driveLink) {
+    if (!formData.streams.length || !formData.semesters.length || !formData.subject || !formData.type || !formData.driveLink) {
       toast({
         title: "Error",
-        description: "Please fill in all required fields",
+        description: "Please fill in all required fields including at least one stream and semester",
         variant: "destructive"
       });
       return;
@@ -75,8 +113,8 @@ const AdminMaterials = () => {
 
     const newMaterial: StudyMaterial = {
       id: Date.now(),
-      stream: [formData.stream],
-      semester: [formData.semester],
+      stream: formData.streams,
+      semester: formData.semesters,
       subject: formData.subject,
       type: formData.type,
       driveLink: formData.driveLink,
@@ -85,8 +123,8 @@ const AdminMaterials = () => {
 
     setMaterials(prev => [...prev, newMaterial]);
     setFormData({
-      stream: '',
-      semester: '',
+      streams: [],
+      semesters: [],
       subject: '',
       type: '',
       driveLink: '',
@@ -162,38 +200,65 @@ const AdminMaterials = () => {
                 Fill in the details to add a new study material
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="stream">Stream *</Label>
-                  <Select value={formData.stream} onValueChange={(value) => handleInputChange('stream', value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select stream" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {streams.map((stream) => (
-                        <SelectItem key={stream.value} value={stream.value}>
-                          {stream.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+            <CardContent className="space-y-6">
+              {/* Custom Stream Management */}
+              <div className="space-y-2">
+                <Label>Add Custom Stream</Label>
+                <div className="flex gap-2">
+                  <Input
+                    value={newStreamName}
+                    onChange={(e) => setNewStreamName(e.target.value)}
+                    placeholder="e.g., MCA, MBA"
+                  />
+                  <Button onClick={handleAddCustomStream} size="sm">
+                    <Plus className="h-4 w-4" />
+                  </Button>
                 </div>
+                {customStreams.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {customStreams.map((stream) => (
+                      <div key={stream} className="flex items-center gap-1 bg-blue-100 px-2 py-1 rounded text-sm">
+                        {stream}
+                        <button onClick={() => handleRemoveCustomStream(stream)}>
+                          <X className="h-3 w-3" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="semester">Semester *</Label>
-                  <Select value={formData.semester} onValueChange={(value) => handleInputChange('semester', value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select semester" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {semesters.map((semester) => (
-                        <SelectItem key={semester.value} value={semester.value}>
-                          {semester.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+              {/* Stream Selection */}
+              <div className="space-y-2">
+                <Label>Select Streams *</Label>
+                <div className="grid grid-cols-1 gap-2 max-h-32 overflow-y-auto border rounded p-2">
+                  {allStreams.map((stream) => (
+                    <div key={stream.value} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={stream.value}
+                        checked={formData.streams.includes(stream.value)}
+                        onCheckedChange={(checked) => handleStreamChange(stream.value, !!checked)}
+                      />
+                      <Label htmlFor={stream.value} className="text-sm">{stream.label}</Label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Semester Selection */}
+              <div className="space-y-2">
+                <Label>Select Semesters *</Label>
+                <div className="grid grid-cols-2 gap-2">
+                  {semesters.map((semester) => (
+                    <div key={semester.value} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={semester.value}
+                        checked={formData.semesters.includes(semester.value)}
+                        onCheckedChange={(checked) => handleSemesterChange(semester.value, !!checked)}
+                      />
+                      <Label htmlFor={semester.value} className="text-sm">{semester.label}</Label>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -281,8 +346,8 @@ const AdminMaterials = () => {
                           </Button>
                         </div>
                         <p className="text-sm text-gray-600 mb-1">
-                          <strong>Stream:</strong> {material.stream.join(', ').toUpperCase()} | 
-                          <strong> Semester:</strong> {material.semester.join(', ')} | 
+                          <strong>Streams:</strong> {material.stream.join(', ').toUpperCase()} | 
+                          <strong> Semesters:</strong> {material.semester.join(', ')} | 
                           <strong> Type:</strong> {material.type}
                         </p>
                         <p className="text-xs text-gray-500">{material.description}</p>
@@ -313,7 +378,9 @@ const AdminMaterials = () => {
           </CardHeader>
           <CardContent>
             <ol className="list-decimal list-inside space-y-2 text-sm">
-              <li>Fill in the form on the left to add study materials one by one</li>
+              <li>Add custom streams if needed (e.g., MCA, MBA)</li>
+              <li>Select multiple streams and semesters for each material</li>
+              <li>Fill in the material details and add them one by one</li>
               <li>Preview your added materials in the right panel</li>
               <li>Once you're satisfied, copy the JSON data or download it as a file</li>
               <li>Replace the content of <code className="bg-gray-100 px-1 rounded">src/data/studyMaterials.json</code> with your new JSON data</li>

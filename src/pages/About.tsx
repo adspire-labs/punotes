@@ -1,7 +1,7 @@
 
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Target, Heart, BookOpen, Award, Lightbulb } from 'lucide-react';
+import { Users, Target, Heart, BookOpen, Award, Lightbulb, UserCheck, FileText } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -37,6 +37,24 @@ const About = () => {
       icon: <BookOpen className="h-6 w-6 text-green-600" />,
       title: '15+ Subjects',
       description: 'Comprehensive subject coverage'
+    }
+  ];
+
+  const contentSources = [
+    {
+      icon: <UserCheck className="h-6 w-6 text-blue-600" />,
+      title: 'Directly by Moderators of this Site',
+      description: 'Curated and verified content from our dedicated team'
+    },
+    {
+      icon: <FileText className="h-6 w-6 text-green-600" />,
+      title: 'By Students Submitting Their Work',
+      description: 'Community contributions from fellow students'
+    },
+    {
+      icon: <BookOpen className="h-6 w-6 text-purple-600" />,
+      title: 'By Using Other Sources and Articles',
+      description: 'Carefully selected resources from various educational sources'
     }
   ];
 
@@ -111,6 +129,79 @@ const About = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* How Our Site Works */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">How Our Site Works?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {contentSources.map((source, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader>
+                  <div className="flex items-center mb-3">
+                    {source.icon}
+                    <CardTitle className="text-lg ml-3">{source.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600">
+                    {source.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Credits Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Credits</h2>
+          
+          {/* General Credit */}
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="text-center text-blue-600">Community Contributors</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 text-center leading-relaxed">
+                A heartfelt thank you to all Pokhara University students who contributed their study materials to PU e-Library. 
+                Your efforts have made this site a valuable resource for students.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Individual Credits */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-blue-600">Saroj</CardTitle>
+                <CardDescription>Website Developer</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  We would like to give special recognition to Saroj for his exceptional work in creating and developing PU e-Library. 
+                  Saroj's expertise and dedication to website development have resulted in a user-friendly platform that benefits 
+                  students in their academic pursuits. His contributions have been instrumental in making PU e-Library a valuable 
+                  resource for the student community.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-blue-600">Rahul</CardTitle>
+                <CardDescription>Content Contributor</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  We would also like to recognize Rahul for his significant contributions as the main source of study materials 
+                  for the website. Rahul's provision of valuable resources, including notes, old exam questions, and book images, 
+                  has greatly enriched the content available on e-Library. His dedication to supporting Pokhara University students 
+                  through the sharing of educational materials is commendable.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
