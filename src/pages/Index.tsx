@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,7 +36,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <Navigation />
       
       {/* Hero Section */}
@@ -144,42 +143,21 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-8 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <BookOpen className="h-8 w-8 text-blue-400" />
-                <span className="text-xl font-bold">PUNotes</span>
-              </div>
-              <p className="text-gray-400">
-                Empowering Pokhara University students with accessible academic resources.
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <h3 className="text-lg font-semibold">PU Study Hub</h3>
+              <p className="text-gray-400">Your gateway to academic excellence</p>
+            </div>
+            <div className="text-center md:text-right">
+              <p className="text-sm text-gray-400 mb-2">
+                Powered by <span className="text-blue-400 font-semibold">AdspireLabs</span>
+              </p>
+              <p className="text-xs text-gray-500">
+                As the above website is community driven, it may contain copyright contents. We respect the rights of copyright owners. If you are a copyright owner, or are authorized to act on behalf of one, let us know, we will remove it.
               </p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-                <li><Link to="/study-materials" className="text-gray-400 hover:text-white transition-colors">Study Materials</Link></li>
-                <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                <li><Link to="/submit-materials" className="text-gray-400 hover:text-white transition-colors">Submit Materials</Link></li>
-                <li><Link to="/support-us" className="text-gray-400 hover:text-white transition-colors">Support Us</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-              <p className="text-gray-400">
-                For questions or support, reach out to our student team.
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400 mb-2">
-              © 2024 PUNotes. Made with ❤️ by PU students for PU students.
-            </p>
-            <p className="text-gray-500 text-xs">
-              As this website is community driven, it may contain copyrighted content. We respect the rights of copyright owners. If you are a copyright owner, or are authorized to act on behalf of one, let us know, we will remove it.
-            </p>
           </div>
         </div>
       </footer>

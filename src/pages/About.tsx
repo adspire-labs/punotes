@@ -1,4 +1,3 @@
-
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Target, Heart, BookOpen, Award, Lightbulb, UserCheck, FileText } from 'lucide-react';
@@ -132,27 +131,34 @@ const About = () => {
           </div>
         </div>
 
-        {/* How Our Site Works */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">How Our Site Works?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {contentSources.map((source, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex items-center mb-3">
-                    {source.icon}
-                    <CardTitle className="text-lg ml-3">{source.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600">
-                    {source.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        {/* How Our Site Works Section */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-gray-900">How Our Site Works?</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold text-blue-600 mb-2">📚 Directly by Moderators of this Site:</h3>
+              <p className="text-gray-600">
+                Our dedicated moderators carefully curate and upload high-quality study materials, ensuring accuracy and relevance for Pokhara University students.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-green-600 mb-2">👥 By Students Submitting Their Work:</h3>
+              <p className="text-gray-600">
+                Students can contribute their own study materials, notes, and resources through our submission system, creating a collaborative learning environment.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-orange-600 mb-2">🔍 By Using Other Sources and Articles:</h3>
+              <p className="text-gray-600">
+                We also source materials from reliable educational sources and articles, ensuring comprehensive coverage of academic topics.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Credits Section */}
         <div className="mb-12">
@@ -261,6 +267,16 @@ const About = () => {
             Together, we're building a better educational experience for all PU students.
           </div>
         </div>
+      </div>
+
+      {/* Footer */}
+      <div className="text-center mt-12 pt-8 border-t border-gray-200">
+        <p className="text-sm text-gray-500 mb-2">
+          Powered by <span className="text-blue-600 font-semibold">AdspireLabs</span>
+        </p>
+        <p className="text-xs text-gray-400">
+          Building innovative solutions for educational excellence
+        </p>
       </div>
     </div>
   );

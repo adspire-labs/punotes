@@ -1,4 +1,3 @@
-
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -245,6 +244,16 @@ const SupportUs = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Footer */}
+      <div className="text-center mt-12 pt-8 border-t border-gray-200">
+        <p className="text-sm text-gray-500 mb-2">
+          Powered by <span className="text-blue-600 font-semibold">AdspireLabs</span>
+        </p>
+        <p className="text-xs text-gray-400">
+          Building innovative solutions for educational excellence
+        </p>
       </div>
     </div>
   );

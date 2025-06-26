@@ -10,6 +10,8 @@ import StudyMaterials from "./pages/StudyMaterials";
 import SubmitMaterials from "./pages/SubmitMaterials";
 import AdminMaterials from "./pages/AdminMaterials";
 import SupportUs from "./pages/SupportUs";
+import FAQ from "./pages/FAQ";
+import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/study-materials" element={<StudyMaterials />} />
           <Route path="/submit-materials" element={<SubmitMaterials />} />
           <Route path="/support-us" element={<SupportUs />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/admin-materials" element={<AdminMaterials />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
