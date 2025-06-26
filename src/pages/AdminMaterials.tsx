@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -283,7 +282,7 @@ const AdminMaterials = () => {
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Admin - Manage Study Materials</h1>
             <p className="text-gray-600">
-              Add new study materials. Changes are automatically saved to local storage.
+              Add new study materials and export JSON data to update the website.
             </p>
           </div>
           <Button
@@ -482,24 +481,39 @@ const AdminMaterials = () => {
         {/* Instructions */}
         <Card className="mt-8">
           <CardHeader>
-            <CardTitle>How to Use</CardTitle>
+            <CardTitle>How to Update the Website</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
-              <h4 className="font-medium text-green-800 mb-2">✅ Automatic Saving Enabled!</h4>
-              <p className="text-sm text-green-700">
-                Your materials are automatically saved to browser storage. The data will persist between sessions 
-                and be available to users browsing the Study Materials page.
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+              <h4 className="font-medium text-blue-800 mb-2">📋 Manual Update Process</h4>
+              <p className="text-sm text-blue-700">
+                Follow these steps to update the website with new materials for all users to see.
               </p>
             </div>
-            <ol className="list-decimal list-inside space-y-2 text-sm">
-              <li>Add custom streams if needed (e.g., MCA, MBA)</li>
-              <li>Select multiple streams and semesters for each material</li>
-              <li>Fill in the material details and add them one by one</li>
-              <li>Materials are automatically saved and will appear on the Study Materials page</li>
-              <li>You can delete materials by clicking the trash icon</li>
-              <li>Export JSON data if needed for backup or migration purposes</li>
+            <ol className="list-decimal list-inside space-y-3 text-sm">
+              <li>
+                <strong>Add Materials:</strong> Use the form on the left to add all your study materials. 
+                You can add custom streams and select multiple streams/semesters for each material.
+              </li>
+              <li>
+                <strong>Export JSON:</strong> Once you've added all materials, click "Copy JSON" or "Download JSON" 
+                to get the complete data in JSON format.
+              </li>
+              <li>
+                <strong>Update the Data File:</strong> Replace the content of <code className="bg-gray-100 px-2 py-1 rounded">src/data/studyMaterials.json</code> 
+                with your new JSON data. This file contains all the study materials shown on the website.
+              </li>
+              <li>
+                <strong>Deploy Changes:</strong> After updating the JSON file, the changes will be live 
+                for all users once the website is deployed.
+              </li>
             </ol>
+            <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
+              <p className="text-sm text-yellow-700">
+                <strong>Note:</strong> Materials added here are only saved locally in your browser. 
+                To make them visible to all users, you must follow the manual update process above.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
