@@ -54,14 +54,14 @@ const Index = () => {
               Your one-stop destination for Pokhara University study materials. 
               Access notes, syllabus, old questions, and academic resources shared by students.
             </p>
-            <div className="space-x-4">
-              <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-blue-50 w-full sm:w-auto">
                 <Link to="/study-materials">
                   <FileText className="mr-2 h-5 w-5" />
                   Browse Materials
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 w-full sm:w-auto">
                 <Link to="/submit-materials">
                   <Upload className="mr-2 h-5 w-5" />
                   Submit Materials
@@ -102,7 +102,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
@@ -142,7 +142,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <BookOpen className="h-8 w-8 text-blue-400" />

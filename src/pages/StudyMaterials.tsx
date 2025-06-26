@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import {
   Card, CardContent, CardDescription, CardHeader, CardTitle
@@ -14,6 +15,7 @@ import Navigation from '@/components/Navigation';
 import {
   ExternalLink, BookOpen, FileText, HelpCircle, Search
 } from 'lucide-react';
+import studyMaterialsData from '@/data/studyMaterials.json';
 
 const StudyMaterials = () => {
   const [selectedStream, setSelectedStream] = useState('all');
@@ -49,62 +51,7 @@ const StudyMaterials = () => {
     'Literature'
   ];
 
-  const studyMaterials = [
-    {
-      id: 1,
-      stream: ['bca'],
-      semester: ['1'],
-      subject: 'Computer Fundamentals',
-      type: 'Notes',
-      driveLink: 'https://drive.google.com/drive/folders/sample1',
-      description: 'Complete notes for Computer Fundamentals.'
-    },
-    {
-      id: 2,
-      stream: ['bca'],
-      semester: ['1'],
-      subject: 'Mathematics I',
-      type: 'Question Bank',
-      driveLink: 'https://drive.google.com/drive/folders/sample2',
-      description: 'Previous year question papers for Mathematics I.'
-    },
-    {
-      id: 3,
-      stream: ['bca'],
-      semester: ['2'],
-      subject: 'Programming in C',
-      type: 'Solutions',
-      driveLink: 'https://drive.google.com/drive/folders/sample3',
-      description: 'C Programming solutions and exercises.'
-    },
-    {
-      id: 4,
-      stream: ['bba', 'bbs'],
-      semester: ['1', '3'],
-      subject: 'Principles of Management',
-      type: 'Literature',
-      driveLink: 'https://drive.google.com/drive/folders/sample4',
-      description: 'Shared subject in BBA 1st and BBS 3rd.'
-    },
-    {
-      id: 5,
-      stream: ['be'],
-      semester: ['1'],
-      subject: 'Engineering Mathematics',
-      type: 'Imp Files',
-      driveLink: 'https://drive.google.com/drive/folders/sample5',
-      description: 'Important documents and references.'
-    },
-    {
-      id: 6,
-      stream: ['bsc'],
-      semester: ['2'],
-      subject: 'Physics Notes',
-      type: 'Notes',
-      driveLink: 'https://drive.google.com/drive/folders/sample6',
-      description: 'Detailed notes for BSc Physics.'
-    }
-  ];
+  const studyMaterials = studyMaterialsData;
 
   const filteredMaterials = studyMaterials.filter(material => {
     const matchesStream = selectedStream === 'all' ||
@@ -214,7 +161,7 @@ const StudyMaterials = () => {
 
             <div>
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Filter Materials</h2>
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Stream</label>
                   <Select value={selectedStream} onValueChange={setSelectedStream}>
@@ -270,20 +217,24 @@ const StudyMaterials = () => {
         </p>
 
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid grid-cols-6">
-            <TabsTrigger value="all">All ({filteredMaterials.length})</TabsTrigger>
-            {allTypes.map((type) => {
-              const tabValue = type.toLowerCase().replace(/\s/g, '');
-              return (
-                <TabsTrigger key={tabValue} value={tabValue}>
-                  {type} ({materialsByType[type]?.length || 0})
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
+          <div className="overflow-x-auto">
+            <TabsList className="grid w-max min-w-full grid-cols-6 mb-6">
+              <TabsTrigger value="all" className="text-xs sm:text-sm px-2 sm:px-3">
+                All ({filteredMaterials.length})
+              </TabsTrigger>
+              {allTypes.map((type) => {
+                const tabValue = type.toLowerCase().replace(/\s/g, '');
+                return (
+                  <TabsTrigger key={tabValue} value={tabValue} className="text-xs sm:text-sm px-2 sm:px-3 whitespace-nowrap">
+                    {type} ({materialsByType[type]?.length || 0})
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+          </div>
 
           <TabsContent value="all" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredMaterials.map((material) => (
                 <MaterialCard key={material.id} material={material} />
               ))}
@@ -294,7 +245,7 @@ const StudyMaterials = () => {
             const tabValue = type.toLowerCase().replace(/\s/g, '');
             return (
               <TabsContent key={tabValue} value={tabValue} className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {materialsByType[type]?.map((material) => (
                     <MaterialCard key={material.id} material={material} />
                   ))}
