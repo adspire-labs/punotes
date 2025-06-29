@@ -6,29 +6,29 @@
       { "stream": "bba", "semester": "1" }
     ],
     "subject": "English-I",
-    "type": ["Notes"],
-    "driveLink": "https://drive.google.com/drive/folders/sample1",
-    "description": "Complete notes for English-I."
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1_Pg0pBFe0w4Fy8sc93G39lFvVmstWEjX",
+    "description": "Complete material for English-I."
   },
   {
     "id": 2,
     "availableIn": [
-      { "stream": "bca", "semester": "1" }
+      { "stream": "bba", "semester": "1" }
     ],
-    "subject": "Mathematics I",
-    "type": ["Question Bank"],
-    "driveLink": "https://drive.google.com/drive/folders/sample2",
-    "description": "Previous year question papers for Mathematics I."
+    "subject": "Business Mathematics-I",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1frtugFov6qhsZgFqQ48LAQuEgXhq0Rdy?usp=sharing",
+    "description": "Complete material for Business Mathematics-I."
   },
   {
     "id": 3,
     "availableIn": [
-      { "stream": "bca", "semester": "2" }
+      { "stream": "bba", "semester": "1" }
     ],
-    "subject": "Programming in C",
-    "type": ["Solutions"],
-    "driveLink": "https://drive.google.com/drive/folders/sample3",
-    "description": "C Programming solutions and exercises."
+    "subject": "Financial Accounting-I",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1AwriyoP0pCglPsZ1LSQZ7pe0ckj7ATvB?usp=sharing",
+    "description": "Complete material for Financial Accounting-I"
   },
   {
     "id": 4,
@@ -37,38 +37,88 @@
       { "stream": "bbs", "semester": "3" }
     ],
     "subject": "Principles of Management",
-    "type": ["Literature", "Notes"],
-    "driveLink": "https://drive.google.com/drive/folders/sample4",
-    "description": "Shared subject in BBA 1st and BBS 3rd."
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1-T6txl0znH0SGrC6oRb732sJ-jl5pM5M?usp=sharing",
+    "description": "Complete material for Financial Principles of Management."
   },
   {
     "id": 5,
     "availableIn": [
-      { "stream": "be", "semester": "1" }
+      { "stream": "bba", "semester": "1" }
     ],
-    "subject": "Engineering Mathematics",
-    "type": ["Imp Files"],
-    "driveLink": "https://drive.google.com/drive/folders/sample5",
-    "description": "Important documents and references."
+    "subject": "Computer and IT Applications",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/10JU8LUmCpnj52VatkR8ERzfiGuQnBq7G?usp=sharing",
+    "description": "Complete material for Computer and IT Applications"
   },
   {
     "id": 6,
     "availableIn": [
-      { "stream": "bsc", "semester": "2" }
+      { "stream": "bba", "semester": "2" }
     ],
-    "subject": "Physics Notes",
-    "type": ["Notes", "Question Bank"],
-    "driveLink": "https://drive.google.com/drive/folders/sample6",
-    "description": "Detailed notes for BSc Physics."
+    "subject": "General Psychology",
+    "type": ["Notes", "Question Bank", "Solution"],
+    "driveLink": "https://drive.google.com/drive/folders/1iz0h9e1m3BgzsinfZCQPzn2cyK8XaRD5?usp=sharing",
+    "description": "Complete material for General Psychology."
   },
   {
     "id": 7,
     "availableIn": [
-      { "stream": "bca", "semester": "1" }
+      { "stream": "bba", "semester": "2" }
     ],
-    "subject": "Computer Fundamentals",
-    "type": ["Notes"],
-    "driveLink": "https://drive.google.com/drive/folders/sample1",
-    "description": "Complete notes for Computer Fundamentals."
+    "subject": "English-II",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1L7N_4kp8IHDXZHWY49W0I2UuL4dWOCWs?usp=sharing",
+    "description": "Complete material for English-II."
+  },
+  {
+    "id": 8,
+    "availableIn": [
+      { "stream": "bba", "semester": "2" }
+    ],
+    "subject": "Introductory Micro Economics",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1KA1OXxU1woEF3Ycc46CpGaSRRuyZkp5h?usp=sharing",
+    "description": "Complete material for Introductory Micro Economics."
+  },
+  {
+    "id": 9,
+    "availableIn": [
+      { "stream": "bba", "semester": "2" }
+    ],
+    "subject": "Business Mathematics-II",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1eSf6ezq8y9Ifuoj-GQSdVVagsvGdlDha?usp=sharing",
+    "description": "Complete material for Business Mathematics-II."
+  },
+  {
+    "id": 10,
+    "availableIn": [
+      { "stream": "bba", "semester": "2" }
+    ],
+    "subject": "Financial Accounting-II",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/10XNqRPUVZQdVq0apG-ho42ylx39o1F3z?usp=sharing",
+    "description": "Complete material for Financial Accounting-II."
+  },
+  {
+    "id": 11,
+    "availableIn": [
+      { "stream": "bba", "semester": "3" }
+    ],
+    "subject": "Business Communication I",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1Tk2gj6Jrmlo6ZYM_X8b54wtO6ZVazMcZ?usp=sharing",
+    "description": "Complete material for Business Communication I."
+  },
+  {
+    "id": 12,
+    "availableIn": [
+      { "stream": "bba", "semester": "3" }
+    ],
+    "subject": "Business Statistics",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1aB2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q?usp=sharing",
+    "description": "Complete material for Business Statistics."
   }
 ]
