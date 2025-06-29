@@ -3,9 +3,9 @@
   {
     "id": 1,
     "availableIn": [
-      { "stream": "bca", "semester": "1" }
+      { "stream": "bba", "semester": "1" }
     ],
-    "subject": "Computer Fundamentals",
+    "subject": "English-I",
     "type": "Notes",
     "driveLink": "https://drive.google.com/drive/folders/sample1",
     "description": "Complete notes for Computer Fundamentals."
@@ -60,5 +60,15 @@
     "type": "Notes",
     "driveLink": "https://drive.google.com/drive/folders/sample6",
     "description": "Detailed notes for BSc Physics."
+  },
+  {
+    "id": 1,
+    "availableIn": [
+      { "stream": "bca", "semester": "1" }
+    ],
+    "subject": "Computer Fundamentals",
+    "type": "Notes",
+    "driveLink": "https://drive.google.com/drive/folders/sample1",
+    "description": "Complete notes for Computer Fundamentals."
   }
 ]
