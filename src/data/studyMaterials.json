@@ -120,5 +120,224 @@
     "type": ["Notes", "Solution", "Question Bank"],
     "driveLink": "https://drive.google.com/drive/folders/1aB2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q?usp=sharing",
     "description": "Complete material for Business Statistics."
+  }, {
+    "id": 13,
+    "availableIn": [
+      { "stream": "bba", "semester": "3" }
+    ],
+    "subject": "Essentials of Finance",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1G_5kWpRhafu4wrvKBGnFqQ2e6MmfWOGP?usp=sharing",
+    "description": "Complete material for Essentials of Finance."
+  },
+  {
+    "id": 14,
+    "availableIn": [
+      { "stream": "bba", "semester": "3" }
+    ],
+    "subject": "Introductory Macro Economics",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1__sKQfGqf5RsgT5sPh3TK7EDwR6OSTB4?usp=sharing",
+    "description": "Complete material for Introductory Macro Economics."
+  },
+  {
+    "id": 15,
+    "availableIn": [
+      { "stream": "bba", "semester": "3" }
+    ],
+    "subject": "Fundamentals of Sociology",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1_DPspiSbK1RW_5ru95WBiA9Vkg_6VNBr?usp=sharing",
+    "description": "Complete material for Fundamentals of Sociology."
+  }, 
+  {
+    "id": 16,
+    "availableIn": [
+      { "stream": "bba", "semester": "4" }
+    ],
+    "subject": "Data Analysis and Modeling (DAM)",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1vo-sKcgOrbEk_1IyApaJCAq3_UeLrnHD?usp=sharing",
+    "description": "Complete material for Data Analysis and Modeling (DAM)."
+  },
+  {
+    "id": 17,
+    "availableIn": [
+      { "stream": "bba", "semester": "4" }
+    ],
+    "subject": "Business Communication II",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1srk75Mk1EeiDshr6PeXyediWrcflh8ey?usp=sharing",
+    "description": "Complete material for Business Communication II."
+  },
+  {
+    "id": 18,
+    "availableIn": [
+      { "stream": "bba", "semester": "4" }
+    ],
+    "subject": "Financial Management",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1tHWByt1tTsQP3t5SZJ7Y0AL2klz0Rexl?usp=sharing",
+    "description": "Complete material for Financial Management."
+  },
+  {
+    "id": 19,
+    "availableIn": [
+      { "stream": "bba", "semester": "4" }
+    ],
+    "subject": "Principles of Marketing",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1W0UDd53XdXZDefXGa_dMadL9zXDr0GTe?usp=sharing",
+    "description": "Complete material for Principles of Marketing."
+  },
+  {
+    "id": 20,
+    "availableIn": [
+      { "stream": "bba", "semester": "4" }
+    ],
+    "subject": "Fundamentals of Organizational Behavior",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1cn0gyJ-qTPC5GuyKifZtN-bCSPvcKnHL?usp=sharing",
+    "description": "Complete material for Fundamentals of Organizational Behavior."
+  },
+  {
+    "id": 21,
+    "availableIn": [
+      { "stream": "bba", "semester": "5" }
+    ],
+    "subject": "Business Research Methods",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1EvUhcnmptJyAE9JCovdf2lLs8tqBKWvv?usp=sharing",
+    "description": "Complete material for Business Research Methods."
+  },
+  {
+    "id": 22,
+    "availableIn": [
+      { "stream": "bba", "semester": "5" }
+    ],
+    "subject": "Management of Human Resource",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1Slllgn7tde2D3K2zlfOyU3Ekf4equnra?usp=sharing",
+    "description": "Complete material for Management of Human Resource."
+  },
+  {
+    "id": 23,
+    "availableIn": [
+      { "stream": "bba", "semester": "5" }
+    ],
+    "subject": "Basics of Managerial Accounting",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/197UmR5ZZADP4Kl6KYrgQp3jTXoOYxwrl?usp=sharing",
+    "description": "Complete material for Basics of Managerial Accounting."
+  }, 
+  {
+    "id": 24,
+    "availableIn": [
+      { "stream": "bba", "semester": "5" }
+    ],
+    "subject": "Fundamentals of Operations Management",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1lBcNYbn4BpYz756LPgmMQZzstbiScCxv?usp=sharing",
+    "description": "Complete material for Fundamentals of Operations Management."
+  },
+  {
+    "id": 25,
+    "availableIn": [
+      { "stream": "bba", "semester": "5" }
+    ],
+    "subject": "Investment Management",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1UUtJfPxWT8pH1EE_jl1pU0N5muiBnWiy?usp=sharing",
+    "description": "Complete material for Investment Management."
+  },
+  {
+    "id": 26,
+    "availableIn": [
+      { "stream": "bba", "semester": "6" }
+    ],
+    "subject": "INTRODUCTION TO Management Information System (MIS)",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/11Hnp08isDQBkoWj8lvbFw8FOv6Mw8577?usp=sharing",
+    "description": "Complete material for INTRODUCTION TO Management Information System (MIS)."
+  },
+  {
+    "id": 27,
+    "availableIn": [
+      { "stream": "bba", "semester": "6" }
+    ],
+    "subject": "Legal Aspects of Business and Technology (LABT)",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/17zqHfPN7aLPxYycEulk_CUYQkrBWLJ4q?usp=sharing",
+    "description": "Complete material for Legal Aspects of Business and Technology (LABT)."
+  },
+  {
+    "id": 28,
+    "availableIn": [
+      { "stream": "bba", "semester": "6" }
+    ],
+    "subject": "Business and Society",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1R3m3Txd00QIOg1o81XpwTlpAuw3dNlx0?usp=sharing",
+    "description": "Complete material for Business and Society."
+  },
+  {
+    "id": 29,
+    "availableIn": [
+      { "stream": "bba", "semester": "6" }
+    ],
+    "subject": "Financial Institutions and Markets (FIM)",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1CKUINoU2blZGyavZVCtPv_MCwjKaFoht?usp=sharing",
+    "description": "Complete material for Financial Institutions and Markets (FIM)."
+  },
+  {
+    "id": 30,
+    "availableIn": [
+      { "stream": "bba", "semester": "7" }
+    ],
+    "subject": "Business Environment in Nepal",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1NVZVIg8GJYwKzedhKwZyFUmvGXOgqNJv?usp=sharing",
+    "description": "Complete material for Business Environment in Nepal."
+  },
+  {
+    "id": 31,
+    "availableIn": [
+      { "stream": "bba", "semester": "7" }
+    ],
+    "subject": "Fundamentals of Entrepreneurship",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1LHhpk_4u3ySYdOg42Fo8ie3FHV4HgsYQ?usp=sharing",
+    "description": "Complete material for Fundamentals of Entrepreneurship."
+  },
+  {
+    "id": 32,
+    "availableIn": [
+      { "stream": "bba", "semester": "7" }
+    ],
+    "subject": "Strategic Management",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/128HmpbksHGf9zuYrR5bMmq4PqIV1h3rq?usp=sharing",
+    "description": "Complete material for Strategic Management."
+  },
+  {
+    "id": 33,
+    "availableIn": [
+      { "stream": "bba", "semester": "7" }
+    ],
+    "subject": "Introduction to International Business",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1e7WWcIkLQiwZXiDROtxHhuN-WO_Pyvdt?usp=sharing",
+    "description": "Complete material for Introduction to International Business."
+  },
+  {
+    "id": 34,
+    "availableIn": [
+      { "stream": "bba", "semester": "7" }
+    ],
+    "subject": "Essentials of E-Business",
+    "type": ["Notes", "Solution", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1GUPsMBz5plKTzbd72IfViNJOlYKyNDzG?usp=sharing",
+    "description": "Complete material for Essentials of E-Business."
   }
 ]
