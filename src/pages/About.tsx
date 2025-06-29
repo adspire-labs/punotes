@@ -42,18 +42,18 @@ const About = () => {
   const contentSources = [
     {
       icon: <UserCheck className="h-6 w-6 text-blue-600" />,
-      title: 'Directly by Moderators of this Site',
-      description: 'Curated and verified content from our dedicated team'
+      title: 'Uploaded by Moderators',
+      description: 'Verified and curated by our team to ensure quality'
     },
     {
       icon: <FileText className="h-6 w-6 text-green-600" />,
-      title: 'By Students Submitting Their Work',
-      description: 'Community contributions from fellow students'
+      title: 'Submitted by Students',
+      description: 'Contributions from students for students'
     },
     {
       icon: <BookOpen className="h-6 w-6 text-purple-600" />,
-      title: 'By Using Other Sources and Articles',
-      description: 'Carefully selected resources from various educational sources'
+      title: 'Collected from Trusted Sources',
+      description: 'Academic references and online resources'
     }
   ];
 
@@ -131,31 +131,27 @@ const About = () => {
           </div>
         </div>
 
-        {/* How Our Site Works Section */}
+        {/* How Materials Are Collected Section */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-gray-900">How Our Site Works?</CardTitle>
+            <CardTitle className="text-2xl font-bold text-gray-900">How Materials Are Collected</CardTitle>
+            <CardDescription className="text-gray-600">
+              We gather study materials through multiple reliable sources to ensure comprehensive coverage
+            </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-blue-600 mb-2">📚 Directly by Moderators of this Site:</h3>
-              <p className="text-gray-600">
-                Our dedicated moderators carefully curate and upload high-quality study materials, ensuring accuracy and relevance for Pokhara University students.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-green-600 mb-2">👥 By Students Submitting Their Work:</h3>
-              <p className="text-gray-600">
-                Students can contribute their own study materials, notes, and resources through our submission system, creating a collaborative learning environment.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-orange-600 mb-2">🔍 By Using Other Sources and Articles:</h3>
-              <p className="text-gray-600">
-                We also source materials from reliable educational sources and articles, ensuring comprehensive coverage of academic topics.
-              </p>
+          <CardContent>
+            <div className="grid md:grid-cols-3 gap-6">
+              {contentSources.map((source, index) => (
+                <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
+                  <div className="flex-shrink-0">
+                    {source.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">{source.title}</h3>
+                    <p className="text-sm text-gray-600">{source.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>

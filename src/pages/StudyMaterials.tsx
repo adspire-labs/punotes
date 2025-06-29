@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   Card, CardContent, CardDescription, CardHeader, CardTitle
 } from '@/components/ui/card';
@@ -21,22 +21,6 @@ const StudyMaterials = () => {
   const [selectedStream, setSelectedStream] = useState('all');
   const [selectedSemester, setSelectedSemester] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [studyMaterials, setStudyMaterials] = useState(studyMaterialsData);
-
-  // Load materials from localStorage on component mount
-  useEffect(() => {
-    const savedMaterials = localStorage.getItem('studyMaterials');
-    if (savedMaterials) {
-      try {
-        const parsedMaterials = JSON.parse(savedMaterials);
-        if (parsedMaterials.length > 0) {
-          setStudyMaterials(parsedMaterials);
-        }
-      } catch (error) {
-        console.error('Error parsing saved materials:', error);
-      }
-    }
-  }, []);
 
   const streams = [
     { value: 'all', label: 'All Streams' },
@@ -67,7 +51,7 @@ const StudyMaterials = () => {
     'Literature'
   ];
 
-  const filteredMaterials = studyMaterials.filter(material => {
+  const filteredMaterials = studyMaterialsData.filter(material => {
     const matchesStream = selectedStream === 'all' ||
       (Array.isArray(material.stream)
         ? material.stream.includes(selectedStream)
@@ -278,6 +262,16 @@ const StudyMaterials = () => {
             </p>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div className="text-center mt-12 pt-8 border-t border-gray-200">
+        <p className="text-sm text-gray-500 mb-2">
+          Powered by <span className="text-blue-600 font-semibold">AdspireLabs</span>
+        </p>
+        <p className="text-xs text-gray-400">
+          Building innovative solutions for educational excellence
+        </p>
       </div>
     </div>
   );
