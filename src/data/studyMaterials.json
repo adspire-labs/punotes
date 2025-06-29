@@ -2,8 +2,9 @@
 [
   {
     "id": 1,
-    "stream": ["bca"],
-    "semester": ["1"],
+    "availableIn": [
+      { "stream": "bca", "semester": "1" }
+    ],
     "subject": "Computer Fundamentals",
     "type": "Notes",
     "driveLink": "https://drive.google.com/drive/folders/sample1",
@@ -11,8 +12,9 @@
   },
   {
     "id": 2,
-    "stream": ["bca"],
-    "semester": ["1"],
+    "availableIn": [
+      { "stream": "bca", "semester": "1" }
+    ],
     "subject": "Mathematics I",
     "type": "Question Bank",
     "driveLink": "https://drive.google.com/drive/folders/sample2",
@@ -20,8 +22,9 @@
   },
   {
     "id": 3,
-    "stream": ["bca"],
-    "semester": ["2"],
+    "availableIn": [
+      { "stream": "bca", "semester": "2" }
+    ],
     "subject": "Programming in C",
     "type": "Solutions",
     "driveLink": "https://drive.google.com/drive/folders/sample3",
@@ -29,8 +32,10 @@
   },
   {
     "id": 4,
-    "stream": ["bba", "bbs"],
-    "semester": ["1", "3"],
+    "availableIn": [
+      { "stream": "bba", "semester": "1" },
+      { "stream": "bbs", "semester": "3" }
+    ],
     "subject": "Principles of Management",
     "type": "Literature",
     "driveLink": "https://drive.google.com/drive/folders/sample4",
@@ -38,8 +43,9 @@
   },
   {
     "id": 5,
-    "stream": ["be"],
-    "semester": ["1"],
+    "availableIn": [
+      { "stream": "be", "semester": "1" }
+    ],
     "subject": "Engineering Mathematics",
     "type": "Imp Files",
     "driveLink": "https://drive.google.com/drive/folders/sample5",
@@ -47,8 +53,9 @@
   },
   {
     "id": 6,
-    "stream": ["bsc"],
-    "semester": ["2"],
+    "availableIn": [
+      { "stream": "bsc", "semester": "2" }
+    ],
     "subject": "Physics Notes",
     "type": "Notes",
     "driveLink": "https://drive.google.com/drive/folders/sample6",

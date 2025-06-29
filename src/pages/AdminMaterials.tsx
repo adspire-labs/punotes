@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { Trash2, Plus, Download, Upload, Lock, Eye, EyeOff } from 'lucide-react';
+import { Trash2, Plus, Download, Upload, Lock, Eye, EyeOff, Settings } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import Navigation from '@/components/Navigation';
 import studyMaterialsData from '@/data/studyMaterials.json';
@@ -22,23 +22,51 @@ const AdminMaterials = () => {
   const [customStreams, setCustomStreams] = useState<string[]>([]);
   const [newStreamName, setNewStreamName] = useState('');
 
+  // Password change state
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showChangePassword, setShowChangePassword] = useState(false);
+  const [currentAdminPassword, setCurrentAdminPassword] = useState('admin123');
+
   // Form state
   const [formData, setFormData] = useState({
     subject: '',
     type: '',
     description: '',
     driveLink: '',
-    streams: [] as string[],
-    semesters: [] as string[]
+    availableIn: [] as Array<{stream: string, semester: string}>
   });
 
   const handleLogin = () => {
-    if (password === 'admin123') {
+    if (password === currentAdminPassword) {
       setIsAuthenticated(true);
       toast.success('Login successful!');
     } else {
       toast.error('Invalid password');
     }
+  };
+
+  const handlePasswordChange = () => {
+    if (oldPassword !== currentAdminPassword) {
+      toast.error('Current password is incorrect');
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      toast.error('New passwords do not match');
+      return;
+    }
+    if (newPassword.length < 6) {
+      toast.error('New password must be at least 6 characters');
+      return;
+    }
+    
+    setCurrentAdminPassword(newPassword);
+    setOldPassword('');
+    setNewPassword('');
+    setConfirmPassword('');
+    setShowChangePassword(false);
+    toast.success('Password changed successfully!');
   };
 
   const defaultStreams = ['bca', 'bba', 'bbs', 'be', 'bsc'];
@@ -54,35 +82,45 @@ const AdminMaterials = () => {
     }
   };
 
-  const handleStreamToggle = (stream: string) => {
+  const addStreamSemesterPair = () => {
     setFormData(prev => ({
       ...prev,
-      streams: prev.streams.includes(stream)
-        ? prev.streams.filter(s => s !== stream)
-        : [...prev.streams, stream]
+      availableIn: [...prev.availableIn, { stream: '', semester: '' }]
     }));
   };
 
-  const handleSemesterToggle = (semester: string) => {
+  const updateStreamSemesterPair = (index: number, field: 'stream' | 'semester', value: string) => {
     setFormData(prev => ({
       ...prev,
-      semesters: prev.semesters.includes(semester)
-        ? prev.semesters.filter(s => s !== semester)
-        : [...prev.semesters, semester]
+      availableIn: prev.availableIn.map((item, i) => 
+        i === index ? { ...item, [field]: value } : item
+      )
+    }));
+  };
+
+  const removeStreamSemesterPair = (index: number) => {
+    setFormData(prev => ({
+      ...prev,
+      availableIn: prev.availableIn.filter((_, i) => i !== index)
     }));
   };
 
   const addMaterial = () => {
     if (!formData.subject || !formData.type || !formData.description || !formData.driveLink || 
-        formData.streams.length === 0 || formData.semesters.length === 0) {
-      toast.error('Please fill in all required fields');
+        formData.availableIn.length === 0) {
+      toast.error('Please fill in all required fields and add at least one stream-semester pair');
+      return;
+    }
+
+    const validPairs = formData.availableIn.filter(pair => pair.stream && pair.semester);
+    if (validPairs.length === 0) {
+      toast.error('Please complete at least one stream-semester pair');
       return;
     }
 
     const newMaterial = {
       id: Date.now(),
-      stream: formData.streams,
-      semester: formData.semesters,
+      availableIn: validPairs,
       subject: formData.subject,
       type: formData.type,
       driveLink: formData.driveLink,
@@ -95,8 +133,7 @@ const AdminMaterials = () => {
       type: '',
       description: '',
       driveLink: '',
-      streams: [],
-      semesters: []
+      availableIn: []
     });
     toast.success('Material added successfully!');
   };
@@ -132,6 +169,23 @@ const AdminMaterials = () => {
       }
     };
     reader.readAsText(file);
+  };
+
+  const formatAvailability = (availableIn: Array<{stream: string, semester: string}>) => {
+    return availableIn.map(item => 
+      `${item.stream.toUpperCase()} - ${item.semester}${getOrdinalSuffix(item.semester)} Sem`
+    ).join(', ');
+  };
+
+  const getOrdinalSuffix = (num: string) => {
+    const n = parseInt(num);
+    if (n >= 11 && n <= 13) return 'th';
+    switch (n % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
   };
 
   if (!isAuthenticated) {
@@ -177,12 +231,62 @@ const AdminMaterials = () => {
       <Navigation />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Admin Materials Management</h1>
-          <p className="text-gray-600">
-            Manage study materials for the PUNotes website.
-          </p>
+        <div className="mb-8 flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Admin Materials Management</h1>
+            <p className="text-gray-600">
+              Manage study materials for the PUNotes website.
+            </p>
+          </div>
+          <Button 
+            onClick={() => setShowChangePassword(!showChangePassword)}
+            variant="outline"
+            className="flex items-center gap-2"
+          >
+            <Settings className="h-4 w-4" />
+            Change Password
+          </Button>
         </div>
+
+        {showChangePassword && (
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle>Change Admin Password</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <Label>Current Password</Label>
+                  <Input
+                    type="password"
+                    value={oldPassword}
+                    onChange={(e) => setOldPassword(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <Label>New Password</Label>
+                  <Input
+                    type="password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <Label>Confirm New Password</Label>
+                  <Input
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <Button onClick={handlePasswordChange}>Update Password</Button>
+                <Button onClick={() => setShowChangePassword(false)} variant="outline">Cancel</Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         <Alert className="mb-6 bg-blue-50 border-blue-200">
           <AlertDescription>
@@ -280,35 +384,57 @@ const AdminMaterials = () => {
                 </div>
 
                 <div>
-                  <Label>Select Streams</Label>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {allStreams.map((stream) => (
-                      <Badge
-                        key={stream}
-                        variant={formData.streams.includes(stream) ? "default" : "secondary"}
-                        className="cursor-pointer"
-                        onClick={() => handleStreamToggle(stream)}
-                      >
-                        {stream.toUpperCase()}
-                      </Badge>
-                    ))}
+                  <div className="flex justify-between items-center mb-2">
+                    <Label>Stream-Semester Pairs</Label>
+                    <Button onClick={addStreamSemesterPair} variant="outline" size="sm">
+                      <Plus className="h-4 w-4 mr-1" />
+                      Add Pair
+                    </Button>
                   </div>
-                </div>
-
-                <div>
-                  <Label>Select Semesters</Label>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {allSemesters.map((semester) => (
-                      <Badge
-                        key={semester}
-                        variant={formData.semesters.includes(semester) ? "default" : "secondary"}
-                        className="cursor-pointer"
-                        onClick={() => handleSemesterToggle(semester)}
+                  
+                  {formData.availableIn.map((pair, index) => (
+                    <div key={index} className="flex gap-2 items-center mb-2">
+                      <Select 
+                        value={pair.stream} 
+                        onValueChange={(value) => updateStreamSemesterPair(index, 'stream', value)}
                       >
-                        {semester}
-                      </Badge>
-                    ))}
-                  </div>
+                        <SelectTrigger className="flex-1">
+                          <SelectValue placeholder="Select stream" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {allStreams.map((stream) => (
+                            <SelectItem key={stream} value={stream}>
+                              {stream.toUpperCase()}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      
+                      <Select 
+                        value={pair.semester} 
+                        onValueChange={(value) => updateStreamSemesterPair(index, 'semester', value)}
+                      >
+                        <SelectTrigger className="flex-1">
+                          <SelectValue placeholder="Select semester" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {allSemesters.map((semester) => (
+                            <SelectItem key={semester} value={semester}>
+                              {semester}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      
+                      <Button 
+                        onClick={() => removeStreamSemesterPair(index)}
+                        variant="outline"
+                        size="sm"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  ))}
                 </div>
 
                 <Button onClick={addMaterial} className="w-full">
@@ -331,8 +457,7 @@ const AdminMaterials = () => {
                       <div className="flex-1">
                         <h3 className="font-medium">{material.subject}</h3>
                         <p className="text-sm text-gray-600">
-                          {material.type} • {Array.isArray(material.stream) ? material.stream.join(', ') : material.stream} • 
-                          Sem {Array.isArray(material.semester) ? material.semester.join(', ') : material.semester}
+                          {material.type} • {formatAvailability(material.availableIn)}
                         </p>
                         <p className="text-sm text-gray-500 mt-1">{material.description}</p>
                       </div>
@@ -388,7 +513,6 @@ const AdminMaterials = () => {
         </Tabs>
       </div>
 
-      {/* Footer */}
       <div className="text-center mt-12 pt-8 border-t border-gray-200">
         <p className="text-sm text-gray-500 mb-2">
           Powered by <span className="text-blue-600 font-semibold">AdspireLabs</span>

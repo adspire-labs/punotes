@@ -52,22 +52,18 @@ const StudyMaterials = () => {
   ];
 
   const filteredMaterials = studyMaterialsData.filter(material => {
-    const matchesStream = selectedStream === 'all' ||
-      (Array.isArray(material.stream)
-        ? material.stream.includes(selectedStream)
-        : material.stream === selectedStream);
-
-    const matchesSemester = selectedSemester === 'all' ||
-      (Array.isArray(material.semester)
-        ? material.semester.includes(selectedSemester)
-        : material.semester === selectedSemester);
+    const matchesStreamSemester = selectedStream === 'all' && selectedSemester === 'all' ||
+      material.availableIn.some(availability => 
+        (selectedStream === 'all' || availability.stream === selectedStream) &&
+        (selectedSemester === 'all' || availability.semester === selectedSemester)
+      );
 
     const matchesSearch = searchQuery === '' ||
       material.subject.toLowerCase().includes(searchQuery.toLowerCase()) ||
       material.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       material.type.toLowerCase().includes(searchQuery.toLowerCase());
 
-    return matchesStream && matchesSemester && matchesSearch;
+    return matchesStreamSemester && matchesSearch;
   });
 
   const materialsByType = Object.fromEntries(
@@ -96,6 +92,23 @@ const StudyMaterials = () => {
     }
   };
 
+  const formatAvailability = (availableIn: Array<{stream: string, semester: string}>) => {
+    return availableIn.map(item => 
+      `${item.stream.toUpperCase()} - ${item.semester}${getOrdinalSuffix(item.semester)} Semester`
+    ).join(', ');
+  };
+
+  const getOrdinalSuffix = (num: string) => {
+    const n = parseInt(num);
+    if (n >= 11 && n <= 13) return 'th';
+    switch (n % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
+  };
+
   const MaterialCard = ({ material }: { material: any }) => (
     <Card className="hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
@@ -109,15 +122,8 @@ const StudyMaterials = () => {
         </div>
         <CardTitle className="text-lg">{material.subject}</CardTitle>
         <CardDescription>
-          <p>
-            <strong>Stream:</strong>{' '}
-            {(Array.isArray(material.stream) ? material.stream : [material.stream])
-              .map(s => s.toUpperCase())
-              .join(', ')}
-          </p>
-          <p>
-            <strong>Semester:</strong>{' '}
-            {(Array.isArray(material.semester) ? material.semester : [material.semester]).join(', ')}
+          <p className="text-sm">
+            <strong>Available in:</strong> {formatAvailability(material.availableIn)}
           </p>
         </CardDescription>
       </CardHeader>
@@ -264,7 +270,6 @@ const StudyMaterials = () => {
         )}
       </div>
 
-      {/* Footer */}
       <div className="text-center mt-12 pt-8 border-t border-gray-200">
         <p className="text-sm text-gray-500 mb-2">
           Powered by <span className="text-blue-600 font-semibold">AdspireLabs</span>
