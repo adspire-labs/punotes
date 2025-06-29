@@ -17,7 +17,7 @@ interface StudyMaterial {
   id: number;
   availableIn: StreamSemesterPair[];
   subject: string;
-  type: string;
+  type: string[];
   driveLink: string;
   description: string;
 }
@@ -28,7 +28,10 @@ const StudyMaterials = () => {
   const [selectedSemester, setSelectedSemester] = useState<string>('all');
   const [selectedType, setSelectedType] = useState<string>('all');
 
-  const materials: StudyMaterial[] = studyMaterialsData;
+  // Sort materials alphabetically by subject name
+  const materials: StudyMaterial[] = useMemo(() => {
+    return [...studyMaterialsData].sort((a, b) => a.subject.localeCompare(b.subject));
+  }, []);
 
   const filteredMaterials = useMemo(() => {
     return materials.filter(material => {
@@ -41,7 +44,7 @@ const StudyMaterials = () => {
       const matchesSemester = selectedSemester === 'all' || 
                             material.availableIn.some(pair => pair.semester === selectedSemester);
       
-      const matchesType = selectedType === 'all' || material.type === selectedType;
+      const matchesType = selectedType === 'all' || material.type.includes(selectedType);
 
       // For specific stream and semester combination
       if (selectedStream !== 'all' && selectedSemester !== 'all') {
@@ -224,10 +227,12 @@ const StudyMaterials = () => {
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle className="text-lg">{material.subject}</CardTitle>
-                      <CardDescription className="mt-1">
-                        <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                          {material.type}
-                        </span>
+                      <CardDescription className="mt-1 space-x-1">
+                        {material.type.map((type, index) => (
+                          <span key={index} className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                            {type}
+                          </span>
+                        ))}
                       </CardDescription>
                     </div>
                   </div>

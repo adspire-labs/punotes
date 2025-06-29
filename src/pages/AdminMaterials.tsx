@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Plus, Trash2, Download, Lock } from 'lucide-react';
+import { Plus, Trash2, Download, Lock, X } from 'lucide-react';
 
 interface StreamSemesterPair {
   stream: string;
@@ -17,7 +16,7 @@ interface StudyMaterial {
   id: number;
   availableIn: StreamSemesterPair[];
   subject: string;
-  type: string;
+  type: string[];
   driveLink: string;
   description: string;
 }
@@ -30,10 +29,11 @@ const AdminMaterials = () => {
     id: 1,
     availableIn: [{ stream: '', semester: '' }],
     subject: '',
-    type: '',
+    type: [],
     driveLink: '',
     description: ''
   });
+  const [selectedType, setSelectedType] = useState('');
 
   const handleLogin = () => {
     if (password === 'admin123') {
@@ -41,6 +41,23 @@ const AdminMaterials = () => {
     } else {
       alert('Incorrect password');
     }
+  };
+
+  const addType = () => {
+    if (selectedType && !currentMaterial.type.includes(selectedType)) {
+      setCurrentMaterial({
+        ...currentMaterial,
+        type: [...currentMaterial.type, selectedType]
+      });
+      setSelectedType('');
+    }
+  };
+
+  const removeType = (typeToRemove: string) => {
+    setCurrentMaterial({
+      ...currentMaterial,
+      type: currentMaterial.type.filter(type => type !== typeToRemove)
+    });
   };
 
   const addStreamSemesterPair = () => {
@@ -68,7 +85,7 @@ const AdminMaterials = () => {
   };
 
   const addMaterial = () => {
-    if (!currentMaterial.subject || !currentMaterial.type || !currentMaterial.driveLink) {
+    if (!currentMaterial.subject || currentMaterial.type.length === 0 || !currentMaterial.driveLink) {
       alert('Please fill in all required fields');
       return;
     }
@@ -90,7 +107,7 @@ const AdminMaterials = () => {
       id: materials.length + 2,
       availableIn: [{ stream: '', semester: '' }],
       subject: '',
-      type: '',
+      type: [],
       driveLink: '',
       description: ''
     });
@@ -177,19 +194,37 @@ const AdminMaterials = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Type *</label>
-              <Select value={currentMaterial.type} onValueChange={(value) => setCurrentMaterial({...currentMaterial, type: value})}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Notes">Notes</SelectItem>
-                  <SelectItem value="Question Bank">Question Bank</SelectItem>
-                  <SelectItem value="Solutions">Solutions</SelectItem>
-                  <SelectItem value="Literature">Literature</SelectItem>
-                  <SelectItem value="Imp Files">Imp Files</SelectItem>
-                </SelectContent>
-              </Select>
+              <label className="block text-sm font-medium mb-2">Types *</label>
+              <div className="flex gap-2 mb-2">
+                <Select value={selectedType} onValueChange={setSelectedType}>
+                  <SelectTrigger className="flex-1">
+                    <SelectValue placeholder="Select type to add" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Notes">Notes</SelectItem>
+                    <SelectItem value="Question Bank">Question Bank</SelectItem>
+                    <SelectItem value="Solutions">Solutions</SelectItem>
+                    <SelectItem value="Literature">Literature</SelectItem>
+                    <SelectItem value="Imp Files">Imp Files</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Button onClick={addType} variant="outline" size="sm">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {currentMaterial.type.map((type, index) => (
+                  <span key={index} className="inline-flex items-center bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded">
+                    {type}
+                    <button 
+                      onClick={() => removeType(type)}
+                      className="ml-1 text-blue-600 hover:text-blue-800"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div>
@@ -278,7 +313,13 @@ const AdminMaterials = () => {
                     <div className="flex justify-between items-start">
                       <div>
                         <h4 className="font-semibold">{material.subject}</h4>
-                        <p className="text-sm text-gray-600">{material.type}</p>
+                        <div className="space-x-1 mb-1">
+                          {material.type.map((type, index) => (
+                            <span key={index} className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                              {type}
+                            </span>
+                          ))}
+                        </div>
                         <p className="text-sm text-gray-600">
                           Available in: {material.availableIn.map(pair => `${pair.stream.toUpperCase()} - ${pair.semester}${pair.semester === '1' ? 'st' : pair.semester === '2' ? 'nd' : pair.semester === '3' ? 'rd' : 'th'} Semester`).join(', ')}
                         </p>

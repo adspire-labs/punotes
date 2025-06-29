@@ -6,9 +6,9 @@
       { "stream": "bba", "semester": "1" }
     ],
     "subject": "English-I",
-    "type": "Notes",
+    "type": ["Notes"],
     "driveLink": "https://drive.google.com/drive/folders/sample1",
-    "description": "Complete notes for Computer Fundamentals."
+    "description": "Complete notes for English-I."
   },
   {
     "id": 2,
@@ -16,7 +16,7 @@
       { "stream": "bca", "semester": "1" }
     ],
     "subject": "Mathematics I",
-    "type": "Question Bank",
+    "type": ["Question Bank"],
     "driveLink": "https://drive.google.com/drive/folders/sample2",
     "description": "Previous year question papers for Mathematics I."
   },
@@ -26,7 +26,7 @@
       { "stream": "bca", "semester": "2" }
     ],
     "subject": "Programming in C",
-    "type": "Solutions",
+    "type": ["Solutions"],
     "driveLink": "https://drive.google.com/drive/folders/sample3",
     "description": "C Programming solutions and exercises."
   },
@@ -37,7 +37,7 @@
       { "stream": "bbs", "semester": "3" }
     ],
     "subject": "Principles of Management",
-    "type": "Literature",
+    "type": ["Literature", "Notes"],
     "driveLink": "https://drive.google.com/drive/folders/sample4",
     "description": "Shared subject in BBA 1st and BBS 3rd."
   },
@@ -47,7 +47,7 @@
       { "stream": "be", "semester": "1" }
     ],
     "subject": "Engineering Mathematics",
-    "type": "Imp Files",
+    "type": ["Imp Files"],
     "driveLink": "https://drive.google.com/drive/folders/sample5",
     "description": "Important documents and references."
   },
@@ -57,17 +57,17 @@
       { "stream": "bsc", "semester": "2" }
     ],
     "subject": "Physics Notes",
-    "type": "Notes",
+    "type": ["Notes", "Question Bank"],
     "driveLink": "https://drive.google.com/drive/folders/sample6",
     "description": "Detailed notes for BSc Physics."
   },
   {
-    "id": 1,
+    "id": 7,
     "availableIn": [
       { "stream": "bca", "semester": "1" }
     ],
     "subject": "Computer Fundamentals",
-    "type": "Notes",
+    "type": ["Notes"],
     "driveLink": "https://drive.google.com/drive/folders/sample1",
     "description": "Complete notes for Computer Fundamentals."
   }
