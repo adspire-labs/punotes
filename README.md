@@ -43,19 +43,3 @@ We believe in open collaboration.
 
 ---
 
-## 📁 Project Setup (for Developers)
-
-To run the project locally:
-
-```bash
-# Step 1: Clone the repository
-git clone <YOUR_GIT_REPO_URL>
-
-# Step 2: Navigate into the project folder
-cd <project-folder>
-
-# Step 3: Install dependencies
-npm install
-
-# Step 4: Run the dev server
-npm run dev
