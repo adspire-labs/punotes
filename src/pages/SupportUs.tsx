@@ -1,30 +1,31 @@
+
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Code, DollarSign, ExternalLink } from 'lucide-react';
+import { Heart, Upload, Users, DollarSign, ExternalLink, Mail, MessageSquare } from 'lucide-react';
 
 const SupportUs = () => {
   const supportOptions = [
     {
-      icon: <Users className="h-8 w-8 text-blue-600" />,
-      title: 'Become a Website Volunteer',
-      description: 'Help us maintain and improve the website. Join our team of dedicated volunteers.',
-      action: 'Fill Volunteer Form',
-      link: '#volunteer-form'
+      icon: <Upload className="h-8 w-8 text-blue-600" />,
+      title: 'Submit Study Materials',
+      description: 'Share your notes, question papers, and study resources with the community.',
+      action: 'Submit Materials',
+      link: 'https://docs.google.com/forms/d/e/1FAIpQLScFDKL4T-qEPRa7Hz16fKYpROCMB3Rsgy4cnI4oz-uXAeP7ng/viewform'
     },
     {
-      icon: <DollarSign className="h-8 w-8 text-green-600" />,
-      title: 'Financial Support',
-      description: 'Support our hosting costs and development efforts through donations.',
-      action: 'Donate Now',
-      link: '#donate'
-    },
-    {
-      icon: <Code className="h-8 w-8 text-purple-600" />,
+      icon: <Users className="h-8 w-8 text-purple-600" />,
       title: 'Technical Contributions',
       description: 'Contribute code, design improvements, or technical expertise.',
-      action: 'Get Involved',
-      link: '#technical'
+      action: 'Contribute Now',
+      link: 'https://docs.google.com/forms/d/e/1FAIpQLScFDKL4T-qEPRa7Hz16fKYpROCMB3Rsgy4cnI4oz-uXAeP7ng/viewform'
+    },
+    {
+      icon: <MessageSquare className="h-8 w-8 text-green-600" />,
+      title: 'Feedback & Ideas',
+      description: 'Share your suggestions to help us improve the platform.',
+      action: 'Give Feedback',
+      link: 'https://docs.google.com/forms/d/e/1FAIpQLScFDKL4T-qEPRa7Hz16fKYpROCMB3Rsgy4cnI4oz-uXAeP7ng/viewform'
     }
   ];
 
@@ -60,9 +61,14 @@ const SupportUs = () => {
                   {option.description}
                 </CardDescription>
                 <Button asChild className="w-full">
-                  <a href={option.link}>
+                  <a 
+                    href={option.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
                     {option.action}
-                    <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </CardContent>
@@ -70,111 +76,86 @@ const SupportUs = () => {
           ))}
         </div>
 
-        {/* Volunteer Form Section */}
-        <Card id="volunteer-form" className="mb-8">
+        {/* BE Materials Section */}
+        <Card className="mb-8">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <Users className="h-6 w-6 mr-2 text-blue-600" />
-              Website Volunteer Application
-            </CardTitle>
+            <CardTitle>BE Study Materials</CardTitle>
             <CardDescription>
-              Interested in helping maintain and improve PUNotes? Fill out our volunteer form.
+              External resources for Bachelor of Engineering students
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="bg-blue-50 rounded-lg p-6 text-center">
-              <h3 className="text-lg font-semibold text-blue-800 mb-4">What We're Looking For:</h3>
-              <div className="grid md:grid-cols-2 gap-4 text-left">
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-sm">Content Moderators</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-sm">Web Developers</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-sm">UI/UX Designers</span>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-sm">Quality Assurance</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-sm">Community Managers</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-sm">Content Contributors</span>
-                  </div>
-                </div>
-              </div>
-              <Button size="lg" className="mt-6">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Open Volunteer Form
-              </Button>
-              <p className="text-sm text-blue-600 mt-4">
-                * Form will open in a new tab. Please provide detailed information about your skills and availability.
+            <div className="bg-orange-50 rounded-lg p-6">
+              <p className="text-gray-700 mb-4">
+                We do not store BE materials on this site. You can search BE notes using the external tool below.
               </p>
+              <Button asChild variant="outline">
+                <a 
+                  href="https://notesearch.bloggernepal.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Search BE Notes
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>
 
-        {/* Donation Section */}
-        <Card id="donate" className="mb-8">
+        {/* Financial Support Section */}
+        <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center">
               <DollarSign className="h-6 w-6 mr-2 text-green-600" />
               Financial Support
             </CardTitle>
             <CardDescription>
-              Help us cover hosting costs, domain fees, and development expenses.
+              Help us maintain and improve the platform
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="text-center">
-              <p className="text-gray-600 mb-6">
-                Your donations help us maintain the website, improve features, and ensure 
-                reliable access to study materials for all PU students.
+            <div className="space-y-4">
+              <p className="text-gray-700">
+                Help us cover hosting, domain, and development costs. Your donations help us improve the platform and ensure free access for all PU students.
               </p>
-              <div className="bg-gray-50 rounded-lg p-6 mb-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Monthly Expenses:</h3>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="text-left">
-                    <div className="flex justify-between">
-                      <span>Web Hosting:</span>
-                      <span>Rs. 2,000</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Domain & SSL:</span>
-                      <span>Rs. 1,500</span>
-                    </div>
-                  </div>
-                  <div className="text-left">
-                    <div className="flex justify-between">
-                      <span>Development:</span>
-                      <span>Rs. 3,000</span>
-                    </div>
-                    <div className="flex justify-between font-semibold border-t pt-2">
-                      <span>Total:</span>
-                      <span>Rs. 6,500</span>
-                    </div>
-                  </div>
-                </div>
+              <p className="text-gray-700 font-medium">
+                Monthly Expense: <strong>Rs. 6,500</strong>
+              </p>
+              <div className="bg-gray-100 border border-gray-300 rounded-lg p-8 text-center text-gray-500">
+                <p className="text-lg mb-2">QR Code for donations will be added here.</p>
+                <p className="text-sm">We accept donations via multiple digital payment methods.</p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4 mb-6">
-                <p className="text-sm text-blue-800">
-                  QR Code for donations will be added here. We accept donations through various digital payment methods.
-                </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Contact Info Section */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Mail className="h-6 w-6 mr-2 text-blue-600" />
+              Contact Us
+            </CardTitle>
+            <CardDescription>
+              Get in touch with the PUNotes team
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <span className="font-medium text-gray-900">Saroj:</span>
+                <a href="mailto:info@sarozpokhrel.com.np" className="text-blue-600 hover:underline">
+                  info@sarozpokhrel.com.np
+                </a>
               </div>
-              <Button size="lg" disabled>
-                QR Code Coming Soon
-              </Button>
+              <div className="flex items-center space-x-2">
+                <span className="font-medium text-gray-900">Rahul:</span>
+                <a href="mailto:rahulkanwaredu@gmail.com" className="text-blue-600 hover:underline">
+                  rahulkanwaredu@gmail.com
+                </a>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -236,8 +217,8 @@ const SupportUs = () => {
           <div className="bg-white rounded-lg p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Questions About Supporting Us?</h3>
             <p className="text-gray-600 mb-4">
-              If you have questions about volunteering, donations, or other ways to support PUNotes, 
-              feel free to reach out to our team.
+              If you have questions about contributing, donations, or other ways to support PUNotes, 
+              feel free to reach out to our team using the contact information above.
             </p>
             <p className="text-sm text-gray-500">
               We appreciate every form of support, big or small. Together, we can make education more accessible!
