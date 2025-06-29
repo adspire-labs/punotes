@@ -2,7 +2,7 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Upload, FileText, MessageSquare, Users } from 'lucide-react';
+import { ExternalLink, Upload, FileText, MessageSquare, Users, Github, MessageCircle, Youtube } from 'lucide-react';
 
 const SubmitMaterials = () => {
   const contributionTypes = [
@@ -80,6 +80,27 @@ const SubmitMaterials = () => {
           ))}
         </div>
 
+        {/* Recent Submissions Section */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Recent Submissions</CardTitle>
+            <CardDescription>
+              View materials submitted by the community
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="bg-white rounded-lg border">
+              <iframe 
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-9PSpUKqbbCxZK82ZTknKNRVyzv0lxDOim1Sy_E3bDfD85HbF5LoX7ZTSKzMZnxtdeGzDuvZ0gAoc/pubhtml?widget=true&amp;headers=false"
+                width="100%" 
+                height="500" 
+                className="rounded border w-full"
+                title="Study Material Submissions"
+              />
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Guidelines */}
         <Card className="mb-8">
           <CardHeader>
@@ -118,6 +139,79 @@ const SubmitMaterials = () => {
                   <li>Maintain academic integrity in all contributions</li>
                 </ul>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Contact Info Section */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Contact Us</CardTitle>
+            <CardDescription>
+              Get in touch with the PUNotes team
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <span className="font-medium text-gray-900">Saroj:</span>
+                <a href="mailto:info@sarozpokhrel.com.np" className="text-blue-600 hover:underline">
+                  info@sarozpokhrel.com.np
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="font-medium text-gray-900">Rahul:</span>
+                <a href="mailto:rahulkanwaredu@gmail.com" className="text-blue-600 hover:underline">
+                  rahulkanwaredu@gmail.com
+                </a>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Community Links */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Join Our Community</CardTitle>
+            <CardDescription>
+              Connect with us on various platforms
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-3 gap-4">
+              <Button asChild variant="outline" className="h-auto p-4">
+                <a 
+                  href="https://github.com/adspire-labs/pu-study-hub" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center space-y-2"
+                >
+                  <Github className="h-6 w-6" />
+                  <span>GitHub</span>
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="h-auto p-4">
+                <a 
+                  href="https://discord.com/invite/VZsjPgSGSW" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center space-y-2"
+                >
+                  <MessageCircle className="h-6 w-6" />
+                  <span>Discord</span>
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="h-auto p-4">
+                <a 
+                  href="https://www.youtube.com/@puelibrary" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center space-y-2"
+                >
+                  <Youtube className="h-6 w-6" />
+                  <span>YouTube</span>
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>
