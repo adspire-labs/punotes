@@ -254,8 +254,9 @@ const AdminMaterials = () => {
                       <SelectValue placeholder="Stream" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="bca">BCA</SelectItem>
+                      <SelectItem value="bca">BCA</SelectItem>  
                       <SelectItem value="bba">BBA</SelectItem>
+                      <SelectItem value="bi">BBA BI</SelectItem>
                       <SelectItem value="bbs">BBS</SelectItem>
                       <SelectItem value="be">BE</SelectItem>
                       <SelectItem value="bsc">BSc</SelectItem>

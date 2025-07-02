@@ -3,7 +3,8 @@
   {
     "id": 1,
     "availableIn": [
-      { "stream": "bba", "semester": "1" }
+      { "stream": "bba", "semester": "1" },
+      { "stream": "bi", "semester": "1" }
     ],
     "subject": "English-I",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -13,7 +14,8 @@
   {
     "id": 2,
     "availableIn": [
-      { "stream": "bba", "semester": "1" }
+      { "stream": "bba", "semester": "1" },
+      { "stream": "bi", "semester": "1" }
     ],
     "subject": "Business Mathematics-I",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -23,7 +25,8 @@
   {
     "id": 3,
     "availableIn": [
-      { "stream": "bba", "semester": "1" }
+      { "stream": "bba", "semester": "1" },
+      { "stream": "bi", "semester": "2" }
     ],
     "subject": "Financial Accounting-I",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -34,7 +37,7 @@
     "id": 4,
     "availableIn": [
       { "stream": "bba", "semester": "1" },
-      { "stream": "bbs", "semester": "3" }
+      { "stream": "bi", "semester": "2" }
     ],
     "subject": "Principles of Management",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -54,7 +57,8 @@
   {
     "id": 6,
     "availableIn": [
-      { "stream": "bba", "semester": "2" }
+      { "stream": "bba", "semester": "2" },
+      { "stream": "bi", "semester": "1" }
     ],
     "subject": "General Psychology",
     "type": ["Notes", "Question Bank", "Solution"],
@@ -64,7 +68,8 @@
   {
     "id": 7,
     "availableIn": [
-      { "stream": "bba", "semester": "2" }
+      { "stream": "bba", "semester": "2" },
+      { "stream": "bi", "semester": "2" }
     ],
     "subject": "English-II",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -74,7 +79,8 @@
   {
     "id": 8,
     "availableIn": [
-      { "stream": "bba", "semester": "2" }
+      { "stream": "bba", "semester": "2" },
+      { "stream": "bi", "semester": "1" }
     ],
     "subject": "Introductory Micro Economics",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -84,7 +90,8 @@
   {
     "id": 9,
     "availableIn": [
-      { "stream": "bba", "semester": "2" }
+      { "stream": "bba", "semester": "2" },
+      { "stream": "bi", "semester": "2" }
     ],
     "subject": "Business Mathematics-II",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -94,7 +101,8 @@
   {
     "id": 10,
     "availableIn": [
-      { "stream": "bba", "semester": "2" }
+      { "stream": "bba", "semester": "2" },
+      { "stream": "bi", "semester": "3" }
     ],
     "subject": "Financial Accounting-II",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -104,9 +112,10 @@
   {
     "id": 11,
     "availableIn": [
-      { "stream": "bba", "semester": "3" }
+      { "stream": "bba", "semester": "3" },
+      { "stream": "bi", "semester": "3" }
     ],
-    "subject": "Business Communication I",
+    "subject": "Business Communication-I",
     "type": ["Notes", "Solution", "Question Bank"],
     "driveLink": "https://drive.google.com/drive/folders/1Tk2gj6Jrmlo6ZYM_X8b54wtO6ZVazMcZ?usp=sharing",
     "description": "Complete material for Business Communication I."
@@ -114,7 +123,8 @@
   {
     "id": 12,
     "availableIn": [
-      { "stream": "bba", "semester": "3" }
+      { "stream": "bba", "semester": "3" },
+      { "stream": "bi", "semester": "3" }
     ],
     "subject": "Business Statistics",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -123,7 +133,8 @@
   }, {
     "id": 13,
     "availableIn": [
-      { "stream": "bba", "semester": "3" }
+      { "stream": "bba", "semester": "3" },
+      { "stream": "bi", "semester": "4" }
     ],
     "subject": "Essentials of Finance",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -133,7 +144,8 @@
   {
     "id": 14,
     "availableIn": [
-      { "stream": "bba", "semester": "3" }
+      { "stream": "bba", "semester": "3" },
+      { "stream": "bi", "semester": "2" }
     ],
     "subject": "Introductory Macro Economics",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -143,7 +155,8 @@
   {
     "id": 15,
     "availableIn": [
-      { "stream": "bba", "semester": "3" }
+      { "stream": "bba", "semester": "3" },
+      { "stream": "bi", "semester": "1" }
     ],
     "subject": "Fundamentals of Sociology",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -153,7 +166,8 @@
   {
     "id": 16,
     "availableIn": [
-      { "stream": "bba", "semester": "4" }
+      { "stream": "bba", "semester": "4" },
+      { "stream": "bi", "semester": "4" }
     ],
     "subject": "Data Analysis and Modeling (DAM)",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -165,7 +179,7 @@
     "availableIn": [
       { "stream": "bba", "semester": "4" }
     ],
-    "subject": "Business Communication II",
+    "subject": "Business Communication-II",
     "type": ["Notes", "Solution", "Question Bank"],
     "driveLink": "https://drive.google.com/drive/folders/1srk75Mk1EeiDshr6PeXyediWrcflh8ey?usp=sharing",
     "description": "Complete material for Business Communication II."
@@ -173,7 +187,8 @@
   {
     "id": 18,
     "availableIn": [
-      { "stream": "bba", "semester": "4" }
+      { "stream": "bba", "semester": "4" },
+      { "stream": "bi", "semester": "5" }
     ],
     "subject": "Financial Management",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -193,9 +208,10 @@
   {
     "id": 20,
     "availableIn": [
-      { "stream": "bba", "semester": "4" }
+      { "stream": "bba", "semester": "4" },
+      { "stream": "bi", "semester": "3" }
     ],
-    "subject": "Fundamentals of Organizational Behavior",
+    "subject": "Fundamentals of Organizational Behavior (OB)",
     "type": ["Notes", "Solution", "Question Bank"],
     "driveLink": "https://drive.google.com/drive/folders/1cn0gyJ-qTPC5GuyKifZtN-bCSPvcKnHL?usp=sharing",
     "description": "Complete material for Fundamentals of Organizational Behavior."
@@ -203,7 +219,8 @@
   {
     "id": 21,
     "availableIn": [
-      { "stream": "bba", "semester": "5" }
+      { "stream": "bba", "semester": "5" },
+      { "stream": "bi", "semester": "4" }
     ],
     "subject": "Business Research Methods",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -213,7 +230,8 @@
   {
     "id": 22,
     "availableIn": [
-      { "stream": "bba", "semester": "5" }
+      { "stream": "bba", "semester": "5" },
+      { "stream": "bi", "semester": "5" }
     ],
     "subject": "Management of Human Resource",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -223,7 +241,8 @@
   {
     "id": 23,
     "availableIn": [
-      { "stream": "bba", "semester": "5" }
+      { "stream": "bba", "semester": "5" },
+      { "stream": "bi", "semester": "4" }
     ],
     "subject": "Basics of Managerial Accounting",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -253,7 +272,8 @@
   {
     "id": 26,
     "availableIn": [
-      { "stream": "bba", "semester": "6" }
+      { "stream": "bba", "semester": "6" },
+      { "stream": "bi", "semester": "5" }
     ],
     "subject": "INTRODUCTION TO Management Information System (MIS)",
     "type": ["Notes", "Solution", "Question Bank"],
@@ -283,7 +303,8 @@
   {
     "id": 29,
     "availableIn": [
-      { "stream": "bba", "semester": "6" }
+      { "stream": "bba", "semester": "6" },
+      { "stream": "bi", "semester": "5" }
     ],
     "subject": "Financial Institutions and Markets (FIM)",
     "type": ["Notes", "Solution", "Question Bank"],

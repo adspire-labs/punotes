@@ -64,7 +64,8 @@ const StudyMaterials = () => {
       'bba': 'BBA', 
       'bbs': 'BBS',
       'be': 'BE',
-      'bsc': 'BSc'
+      'bsc': 'BSc',
+      'bi': 'BBA BI'
     };
     return streamNames[stream] || stream;
   };
@@ -155,10 +156,10 @@ const StudyMaterials = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Streams</SelectItem>
-                    <SelectItem value="bca">BCA</SelectItem>
+                    
                     <SelectItem value="bba">BBA</SelectItem>
-                    <SelectItem value="bbs">BBS</SelectItem>
-                    <SelectItem value="bsc">BSc</SelectItem>
+                    <SelectItem value="bi">BBA BI</SelectItem>
+                    <SelectItem value="bca">BCA</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
