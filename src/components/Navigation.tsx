@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, BookOpen, Info, Upload, Heart, HelpCircle, Mail } from 'lucide-react';
+import { Menu, BookOpen, Info, Upload, Heart, HelpCircle, Mail, Video } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,10 +12,10 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '/', icon: BookOpen },
     { name: 'Study Materials', href: '/study-materials', icon: BookOpen },
+    { name: 'Additional Resources', href: '/additional-resources', icon: Video },
     { name: 'Submit Materials', href: '/submit-materials', icon: Upload },
     { name: 'About', href: '/about', icon: Info },
     { name: 'Support Us', href: '/support-us', icon: Heart },
-    { name: 'FAQ', href: '/faq', icon: HelpCircle },
     { name: 'Contact', href: '/contact-us', icon: Mail },
   ];
 
