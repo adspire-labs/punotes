@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Switch } from '@/components/ui/switch';
-import { Menu, BookOpen, Upload, Heart, Mail, Video, Sun, Moon } from 'lucide-react';
+import { Menu, BookOpen, Upload, Video, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 const Navigation = () => {
@@ -17,8 +17,6 @@ const Navigation = () => {
     { name: 'Study Materials', href: '/study-materials', icon: BookOpen },
     { name: 'Additional Resources', href: '/additional-resources', icon: Video },
     { name: 'Submit Materials', href: '/submit-materials', icon: Upload },
-    { name: 'Support Us', href: '/support-us', icon: Heart },
-    { name: 'Contact', href: '/contact-us', icon: Mail },
   ];
 
   const isActive = (path: string) => location.pathname === path;
