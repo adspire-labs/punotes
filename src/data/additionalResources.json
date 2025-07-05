@@ -1,0 +1,43 @@
+
+[
+  {
+    "id": 1,
+    "title": "Adobe Premiere Pro Complete Course",
+    "category": "Video Editing",
+    "college": "Kantipur Engineering College",
+    "batch": "2024",
+    "type": ["Tutorial", "Course Material"],
+    "driveLink": "https://drive.google.com/drive/folders/sample1",
+    "description": "Complete video editing course materials with project files and step-by-step tutorials"
+  },
+  {
+    "id": 2,
+    "title": "Digital Marketing Fundamentals",
+    "category": "Digital Marketing",
+    "college": "Pokhara University",
+    "batch": "2023",
+    "type": ["Notes", "Case Studies"],
+    "driveLink": "https://drive.google.com/drive/folders/sample2",
+    "description": "Digital marketing strategies, case studies, and practical implementation guides"
+  },
+  {
+    "id": 3,
+    "title": "Final Cut Pro Workshop",
+    "category": "Video Editing",
+    "college": "Kathmandu University",
+    "batch": "2024",
+    "type": ["Workshop Material", "Practice Files"],
+    "driveLink": "https://drive.google.com/drive/folders/sample3",
+    "description": "Professional video editing workshop materials with sample footage"
+  },
+  {
+    "id": 4,
+    "title": "Social Media Marketing Strategy",
+    "category": "Digital Marketing",
+    "college": "Pokhara University",
+    "batch": "2023",
+    "type": ["Strategy Guide", "Templates"],
+    "driveLink": "https://drive.google.com/drive/folders/sample4",
+    "description": "Complete social media marketing strategy with templates and examples"
+  }
+]
