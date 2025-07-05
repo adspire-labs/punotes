@@ -28,24 +28,7 @@ const SupportAndContactCards = () => {
       </Card>
 
       {/* Contact Us Card */}
-      <Card className="w-56 shadow-lg border-2 hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-card text-card-foreground dark:text-card-foreground">
-        <CardHeader className="pb-2">
-          <CardTitle className="flex items-center text-sm text-foreground dark:text-foreground">
-            <Mail className="h-4 w-4 mr-2 text-blue-500" />
-            Contact Us
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="pt-0">
-          <CardDescription className="text-xs mb-2 text-muted-foreground dark:text-muted-foreground">
-            Get in touch with questions, feedback, or suggestions.
-          </CardDescription>
-          <Button asChild size="sm" variant="outline" className="w-full">
-            <Link to="/contact-us">
-              Contact Now
-            </Link>
-          </Button>
-        </CardContent>
-      </Card>
+      
     </div>
   );
 };

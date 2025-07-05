@@ -64,21 +64,7 @@ const ContactUs = () => {
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-4">
-              <Button asChild variant="outline" className="h-auto p-6">
-                <a 
-                  href="https://github.com/adspire-labs/pu-study-hub" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center space-y-3"
-                >
-                  <Github className="h-8 w-8" />
-                  <div className="text-center">
-                    <div className="font-semibold">GitHub</div>
-                    <div className="text-sm text-gray-600">Contribute to the codebase</div>
-                  </div>
-                </a>
-              </Button>
-              
+            
               <Button asChild variant="outline" className="h-auto p-6">
                 <a 
                   href="https://discord.com/invite/VZsjPgSGSW" 
@@ -165,7 +151,7 @@ const ContactUs = () => {
             <div className="bg-blue-50 rounded-lg p-4">
               <p className="text-blue-900 font-medium mb-2">Email Response Time</p>
               <p className="text-blue-700 text-sm">
-                We typically respond to emails within 24-48 hours during weekdays. 
+                We typically respond to emails within 1 week-month. 
                 For urgent technical issues, please also post in our Discord community for faster assistance.
               </p>
             </div>
