@@ -122,13 +122,13 @@ const AdditionalResources = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground dark:text-foreground">College</label>
+                <label className="block text-sm font-medium mb-2 text-foreground dark:text-foreground">Institution</label>
                 <Select value={selectedCollege} onValueChange={setSelectedCollege}>
                   <SelectTrigger className="bg-background dark:bg-background border-input dark:border-input text-foreground dark:text-foreground">
                     <SelectValue placeholder="All Colleges" />
                   </SelectTrigger>
                   <SelectContent className="bg-popover dark:bg-popover border-border dark:border-border">
-                    <SelectItem value="all" className="text-popover-foreground dark:text-popover-foreground">All Colleges</SelectItem>
+                    <SelectItem value="all" className="text-popover-foreground dark:text-popover-foreground">All Institutions</SelectItem>
                     {colleges.map((college) => (
                       <SelectItem key={college} value={college} className="text-popover-foreground dark:text-popover-foreground">{college}</SelectItem>
                     ))}

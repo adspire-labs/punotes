@@ -2,13 +2,13 @@
 [
   {
     "id": 1,
-    "title": "Adobe Premiere Pro Complete Course",
+    "title": "Video Editing Theory (July)",
     "category": "Video Editing",
-    "college": "Kantipur Engineering College",
-    "batch": "2024",
-    "type": ["Tutorial", "Course Material"],
+    "college": "Nepathya College",
+    "batch": "2025",
+    "type": ["Notes", "Course Material"],
     "driveLink": "https://drive.google.com/drive/folders/sample1",
-    "description": "Complete video editing course materials with project files and step-by-step tutorials"
+    "description": "Video editing theory course materials"
   },
   {
     "id": 2,
