@@ -16,10 +16,10 @@ const Navigation = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navItems = [
+    { name: t('nav.home'), path: '/' },
     { name: t('nav.studyMaterials'), path: '/study-materials' },
     { name: t('nav.additionalResources'), path: '/additional-resources' },
     { name: t('nav.submitMaterials'), path: '/submit-materials' },
-    { name: t('nav.faq'), path: '/faq' },
   ];
 
   return (

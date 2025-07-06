@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 import SupportAndContactCards from '@/components/SupportAndContactCards';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Users, Zap, RefreshCw, ArrowRight, CheckCircle } from 'lucide-react';
+import { BookOpen, Users, Zap, RefreshCw, ArrowRight, CheckCircle, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -123,6 +123,33 @@ const Index = () => {
               <p className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">
                 {t('home.aboutDesc3')}
               </p>
+            </div>
+
+            {/* Founders & Contact Section */}
+            <div className="bg-card dark:bg-card p-8 rounded-lg shadow-sm border border-border dark:border-border">
+              <h3 className="text-2xl font-bold text-foreground dark:text-foreground mb-6 text-center">Our Team</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-muted/20 dark:bg-muted/10 rounded-lg">
+                  <h4 className="text-xl font-semibold text-foreground dark:text-foreground mb-2">Saroj Pokhrel</h4>
+                  <p className="text-muted-foreground dark:text-muted-foreground mb-3">Co-Founder & Developer</p>
+                  <div className="flex items-center justify-center space-x-2 text-sm">
+                    <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <a href="mailto:info@sarozpokhrel.com.np" className="text-blue-600 dark:text-blue-400 hover:underline">
+                      info@sarozpokhrel.com.np
+                    </a>
+                  </div>
+                </div>
+                <div className="text-center p-4 bg-muted/20 dark:bg-muted/10 rounded-lg">
+                  <h4 className="text-xl font-semibold text-foreground dark:text-foreground mb-2">Rahul Kanwar</h4>
+                  <p className="text-muted-foreground dark:text-muted-foreground mb-3">Co-Founder & Developer</p>
+                  <div className="flex items-center justify-center space-x-2 text-sm">
+                    <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <a href="mailto:rahulkanwaredu@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
+                      rahulkanwaredu@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 mt-12">

@@ -1,17 +1,18 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+
+type Language = 'en' | 'np';
 
 interface LanguageContextType {
-  language: 'en' | 'np';
-  setLanguage: (lang: 'en' | 'np') => void;
+  language: Language;
+  setLanguage: (language: Language) => void;
   t: (key: string) => string;
 }
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const translations = {
   en: {
     // Navigation
+    'nav.home': 'Home',
     'nav.studyMaterials': 'Study Materials',
     'nav.additionalResources': 'Additional Resources',
     'nav.submitMaterials': 'Submit Materials',
@@ -20,200 +21,79 @@ const translations = {
     // Home page
     'home.title': 'PUNotes',
     'home.subtitle': 'Your Ultimate Study Companion for Pokhara University',
-    'home.description': 'Access quality study materials, resources, and tools designed specifically for Pokhara University students. Join thousands of students who trust PUNotes for their academic success.',
+    'home.description': 'Access comprehensive study materials, notes, question papers, and resources specifically curated for Pokhara University students. Join thousands of students who are already benefiting from our platform.',
     'home.getStarted': 'Get Started',
     'home.exploreResources': 'Explore Resources',
     'home.whyChoose': 'Why Choose PUNotes?',
     'home.comprehensiveContent': 'Comprehensive Content',
-    'home.comprehensiveDesc': 'Extensive collection of notes, question papers, and study materials for all PU programs.',
+    'home.comprehensiveDesc': 'Extensive collection of study materials covering all subjects and semesters.',
     'home.userFriendly': 'User-Friendly Interface',
-    'home.userFriendlyDesc': 'Clean, intuitive design that makes finding and accessing study materials effortless.',
+    'home.userFriendlyDesc': 'Easy navigation and search functionality to find what you need quickly.',
     'home.communityDriven': 'Community Driven',
-    'home.communityDrivenDesc': 'Built by students, for students. Contribute and benefit from collective knowledge.',
+    'home.communityDrivenDesc': 'Built by students, for students. Contribute and help your peers succeed.',
     'home.regularUpdates': 'Regular Updates',
-    'home.regularUpdatesDesc': 'Fresh content added regularly to keep you updated with the latest curriculum.',
+    'home.regularUpdatesDesc': 'Fresh content added regularly to keep pace with curriculum changes.',
     'home.aboutTitle': 'About PUNotes',
-    'home.aboutDesc1': 'PUNotes is a comprehensive educational platform designed specifically for Pokhara University students. We provide easy access to quality study materials, notes, and resources across various academic programs.',
-    'home.aboutDesc2': 'Our mission is to make quality education accessible to every student by providing a centralized platform where students can find, share, and contribute academic resources.',
-    'home.aboutDesc3': 'Join thousands of students who have already benefited from our extensive collection of study materials and become part of a thriving academic community.',
-    
-    // Study Materials
-    'study.title': 'Study Materials',
-    'study.subtitle': 'Access quality study materials for Pokhara University students',
-    'study.beTitle': 'BE Study Materials',
-    'study.beDesc': 'External resources for Bachelor of Engineering students',
-    'study.beNote': 'You can search BE notes using t tool below.',
-    'study.searchBE': 'Search BE Notes',
-    'study.filterMaterials': 'Filter Materials',
-    'study.search': 'Search',
-    'study.searchPlaceholder': 'Search subjects...',
-    'study.stream': 'Stream',
-    'study.allStreams': 'All Streams',
-    'study.semester': 'Semester',
-    'study.allSemesters': 'All Semesters',
-    'study.type': 'Type',
-    'study.allTypes': 'All Types',
-    'study.found': 'found',
-    'study.noMaterials': 'No materials found',
-    'study.noMaterialsDesc': 'Try adjusting your search criteria or filters.',
-    'study.availableIn': 'Available in:',
-    'study.description': 'Description:',
-    'study.accessMaterial': 'Access Material',
-    
-    // Additional Resources
-    'resources.title': 'Additional Resources',
-    'resources.subtitle': 'Video editing, digital marketing, and other skill-based resources for students',
-    'resources.filterResources': 'Filter Resources',
-    'resources.searchPlaceholder': 'Search resources...',
-    'resources.category': 'Category',
-    'resources.allCategories': 'All Categories',
-    'resources.institution': 'Institution',
-    'resources.allInstitutions': 'All Institutions',
-    'resources.batch': 'Batch',
-    'resources.allBatches': 'All Batches',
-    'resources.resources': 'Resources',
-    'resources.noResources': 'No resources found',
-    'resources.noResourcesDesc': 'Try adjusting your search criteria or filters.',
-    'resources.college': 'College & Batch:',
-    'resources.accessResource': 'Access Resource',
-    
-    // Submit Materials
-    'submit.title': 'Contribute to PUNotes',
-    'submit.subtitle': 'Help build the best study resource platform for Pokhara University students. Your contributions make a difference in the academic journey of hundreds of students.',
-    'submit.studyMaterials': 'Submit Study Materials',
-    'submit.studyMaterialsDesc': 'Share your notes, question papers, and study resources with fellow students.',
-    'submit.submitMaterials': 'Submit Materials',
-    'submit.technicalContributions': 'Technical Contributions',
-    'submit.technicalDesc': 'Help improve the website with code, design, or technical expertise.',
-    'submit.contributeTechnically': 'Contribute Technically',
-    'submit.feedback': 'Feedback & Suggestions',
-    'submit.feedbackDesc': 'Share your ideas to help us improve the platform for all students.',
-    'submit.giveFeedback': 'Give Feedback',
-    
-    // Support Us
-    'support.title': 'Support PUNotes',
-    'support.subtitle': 'Help us continue providing quality educational resources to Pokhara University students. Your support makes a real difference in the academic journey of hundreds of students.',
-    'support.financialSupport': 'Financial Support',
-    'support.financialDesc': 'Help us maintain and improve the platform',
-    'support.monthlyExpense': 'Monthly Expense:',
-    
-    // Contact Us
-    'contact.title': 'Contact Us',
-    'contact.subtitle': 'Get in touch with the PUNotes team. We\'re here to help you with any questions or concerns.',
-    'contact.directContact': 'Direct Contact',
-    'contact.directDesc': 'Reach out to us directly via email',
-    'contact.joinCommunity': 'Join Our Community',
-    'contact.joinDesc': 'Connect with us and other students on various platforms',
+    'home.aboutDesc1': 'PUNotes was established in 2022 with a mission to democratize access to quality educational resources for Pokhara University students. We believe that every student deserves access to comprehensive study materials regardless of their background or circumstances.',
+    'home.aboutDesc2': 'Our platform serves as a bridge between students, fostering a collaborative learning environment where knowledge is shared freely. From detailed notes to previous question papers, we curate content that directly aligns with the PU curriculum.',
+    'home.aboutDesc3': 'Founded and maintained by Saroj Pokhrel and Rahul Kanwar, PUNotes continues to grow with the support of our amazing student community. Together, we are building the most comprehensive educational resource hub for Pokhara University.',
     
     // Common
     'common.poweredBy': 'Powered by',
     'common.adspireLabs': 'AdspireLabs',
     'common.tagline': 'Building innovative solutions for educational excellence',
+    'common.search': 'Search...',
+    'common.filter': 'Filter',
+    'common.all': 'All',
+    'common.loading': 'Loading...',
+    'common.noResults': 'No results found',
+    'common.tryAdjusting': 'Try adjusting your search or filter criteria',
   },
   np: {
     // Navigation
+    'nav.home': 'होम',
     'nav.studyMaterials': 'अध्ययन सामग्री',
     'nav.additionalResources': 'अतिरिक्त स्रोतहरू',
     'nav.submitMaterials': 'सामग्री पेश गर्नुहोस्',
     'nav.faq': 'बारम्बार सोधिने प्रश्नहरू',
     
     // Home page
-    'home.title': 'पीयू नोट्स',
-    'home.subtitle': 'पोखरा विश्वविद्यालयका लागि तपाईंको अन्तिम अध्ययन साथी',
-    'home.description': 'पोखरा विश्वविद्यालयका विद्यार्थीहरूका लागि विशेष रूपमा डिजाइन गरिएका गुणस्तरीय अध्ययन सामग्री, स्रोतहरू, र उपकरणहरू पहुँच गर्नुहोस्। हजारौं विद्यार्थीहरू जो आफ्नो शैक्षिक सफलताका लागि पीयू नोट्समा भर पर्छन्, तिनीहरूसँग जोडिनुहोस्।',
+    'home.title': 'PUNotes',
+    'home.subtitle': 'पोखरा विश्वविद्यालयका लागि तपाईंको परम अध्ययन साथी',
+    'home.description': 'पोखरा विश्वविद्यालयका विद्यार्थीहरूका लागि विशेष रूपमा तयार गरिएका व्यापक अध्ययन सामग्री, नोटहरू, प्रश्न पत्रहरू, र स्रोतहरूमा पहुँच गर्नुहोस्। हाम्रो प्लेटफर्मबाट फाइदा उठाइरहेका हजारौं विद्यार्थीहरूमा सामेल हुनुहोस्।',
     'home.getStarted': 'सुरु गर्नुहोस्',
-    'home.exploreResources': 'स्रोतहरू अन्वेषण गर्नुहोस्',
-    'home.whyChoose': 'किन पीयू नोट्स छान्ने?',
+    'home.exploreResources': 'स्रोतहरू खोज्नुहोस्',
+    'home.whyChoose': 'PUNotes किन छान्ने?',
     'home.comprehensiveContent': 'व्यापक सामग्री',
-    'home.comprehensiveDesc': 'सबै पीयू कार्यक्रमहरूका लागि नोटहरू, प्रश्न पत्रहरू, र अध्ययन सामग्रीहरूको व्यापक संग्रह।',
+    'home.comprehensiveDesc': 'सबै विषयहरू र सेमेस्टरहरू कभर गर्ने अध्ययन सामग्रीहरूको विस्तृत संग्रह।',
     'home.userFriendly': 'प्रयोगकर्ता-मैत्री इन्टरफेस',
-    'home.userFriendlyDesc': 'सफा, सहज डिजाइन जसले अध्ययन सामग्रीहरू फेला पार्न र पहुँच गर्न सजिलो बनाउँछ।',
+    'home.userFriendlyDesc': 'तपाईंलाई चाहिने कुरा छिटो फेला पार्न सजिलो नेभिगेसन र खोज कार्यक्षमता।',
     'home.communityDriven': 'समुदायिक संचालित',
-    'home.communityDrivenDesc': 'विद्यार्थीहरूद्वारा, विद्यार्थीहरूका लागि निर्मित। सामूहिक ज्ञानबाट योगदान र लाभ लिनुहोस्।',
+    'home.communityDrivenDesc': 'विद्यार्थीहरूद्वारा निर्मित, विद्यार्थीहरूका लागि। योगदान दिनुहोस् र आफ्ना साथीहरूलाई सफल हुन मद्दत गर्नुहोस्।',
     'home.regularUpdates': 'नियमित अपडेटहरू',
-    'home.regularUpdatesDesc': 'तपाईंलाई नवीनतम पाठ्यक्रमसँग अपडेट राख्न नियमित रूपमा ताजा सामग्री थपिन्छ।',
-    'home.aboutTitle': 'पीयू नोट्सको बारेमा',
-    'home.aboutDesc1': 'पीयू नोट्स पोखरा विश्वविद्यालयका विद्यार्थीहरूका लागि विशेष रूपमा डिजाइन गरिएको एक व्यापक शैक्षिक प्लेटफर्म हो। हामी विभिन्न शैक्षिक कार्यक्रमहरूमा गुणस्तरीय अध्ययन सामग्री, नोटहरू, र स्रोतहरूमा सजिलो पहुँच प्रदान गर्छौं।',
-    'home.aboutDesc2': 'हाम्रो मिशन केन्द्रीकृत प्लेटफर्म प्रदान गरेर हरेक विद्यार्थीलाई गुणस्तरीय शिक्षा पहुँचयोग्य बनाउनु हो जहाँ विद्यार्थीहरूले शैक्षिक स्रोतहरू फेला पार्न, साझा गर्न, र योगदान गर्न सक्छन्।',
-    'home.aboutDesc3': 'हाम्रो व्यापक अध्ययन सामग्री संग्रहबाट पहिले नै लाभान्वित भएका हजारौं विद्यार्थीहरूसँग जोडिनुहोस् र फलिरहेको शैक्षिक समुदायको हिस्सा बन्नुहोस्।',
-    
-    // Study Materials
-    'study.title': 'अध्ययन सामग्री',
-    'study.subtitle': 'पोखरा विश्वविद्यालयका विद्यार्थीहरूका लागि गुणस्तरीय अध्ययन सामग्रीहरू पहुँच गर्नुहोस्',
-    'study.beTitle': 'बीई अध्ययन सामग्री',
-    'study.beDesc': 'इन्जिनियरिङ स्नातक विद्यार्थीहरूका लागि बाह्य स्रोतहरू',
-    'study.beNote': 'तपाईं तलको उपकरण प्रयोग गरेर बीई नोटहरू खोज्न सक्नुहुन्छ।',
-    'study.searchBE': 'बीई नोटहरू खोज्नुहोस्',
-    'study.filterMaterials': 'सामग्री फिल्टर गर्नुहोस्',
-    'study.search': 'खोज्नुहोस्',
-    'study.searchPlaceholder': 'विषयहरू खोज्नुहोस्...',
-    'study.stream': 'धारा',
-    'study.allStreams': 'सबै धाराहरू',
-    'study.semester': 'सेमेस्टर',
-    'study.allSemesters': 'सबै सेमेस्टरहरू',
-    'study.type': 'प्रकार',
-    'study.allTypes': 'सबै प्रकारहरू',
-    'study.found': 'फेला पर्यो',
-    'study.noMaterials': 'कुनै सामग्री फेला परेन',
-    'study.noMaterialsDesc': 'तपाईंको खोज मापदण्डहरू वा फिल्टरहरू समायोजन गर्ने प्रयास गर्नुहोस्।',
-    'study.availableIn': 'उपलब्ध छ:',
-    'study.description': 'विवरण:',
-    'study.accessMaterial': 'सामग्री पहुँच गर्नुहोस्',
-    
-    // Additional Resources
-    'resources.title': 'अतिरिक्त स्रोतहरू',
-    'resources.subtitle': 'भिडियो सम्पादन, डिजिटल मार्केटिङ, र विद्यार्थीहरूका लागि अन्य सीप-आधारित स्रोतहरू',
-    'resources.filterResources': 'स्रोतहरू फिल्टर गर्नुहोस्',
-    'resources.searchPlaceholder': 'स्रोतहरू खोज्नुहोस्...',
-    'resources.category': 'श्रेणी',
-    'resources.allCategories': 'सबै श्रेणीहरू',
-    'resources.institution': 'संस्था',
-    'resources.allInstitutions': 'सबै संस्थाहरू',
-    'resources.batch': 'ब्याच',
-    'resources.allBatches': 'सबै ब्याचहरू',
-    'resources.resources': 'स्रोतहरू',
-    'resources.noResources': 'कुनै स्रोत फेला परेन',
-    'resources.noResourcesDesc': 'तपाईंको खोज मापदण्डहरू वा फिल्टरहरू समायोजन गर्ने प्रयास गर्नुहोस्।',
-    'resources.college': 'कलेज र ब्याच:',
-    'resources.accessResource': 'स्रोत पहुँच गर्नुहोस्',
-    
-    // Submit Materials
-    'submit.title': 'पीयू नोट्समा योगदान गर्नुहोस्',
-    'submit.subtitle': 'पोखरा विश्वविद्यालयका विद्यार्थीहरूका लागि उत्कृष्ट अध्ययन स्रोत प्लेटफर्म निर्माण गर्न मद्दत गर्नुहोस्। तपाईंको योगदानले सयौं विद्यार्थीहरूको शैक्षिक यात्रामा फरक पार्छ।',
-    'submit.studyMaterials': 'अध्ययन सामग्री पेश गर्नुहोस्',
-    'submit.studyMaterialsDesc': 'आफ्ना नोटहरू, प्रश्न पत्रहरू, र अध्ययन स्रोतहरू सँगी विद्यार्थीहरूसँग साझा गर्नुहोस्।',
-    'submit.submitMaterials': 'सामग्री पेश गर्नुहोस्',
-    'submit.technicalContributions': 'प्राविधिक योगदानहरू',
-    'submit.technicalDesc': 'कोड, डिजाइन, वा प्राविधिक विशेषज्ञताको साथ वेबसाइट सुधार गर्न मद्दत गर्नुहोस्।',
-    'submit.contributeTechnically': 'प्राविधिक रूपमा योगदान गर्नुहोस्',
-    'submit.feedback': 'प्रतिक्रिया र सुझावहरू',
-    'submit.feedbackDesc': 'सबै विद्यार्थीहरूका लागि प्लेटफर्म सुधार गर्न हामीलाई मद्दत गर्न आफ्ना विचारहरू साझा गर्नुहोस्।',
-    'submit.giveFeedback': 'प्रतिक्रिया दिनुहोस्',
-    
-    // Support Us
-    'support.title': 'पीयू नोट्सलाई समर्थन गर्नुहोस्',
-    'support.subtitle': 'पोखरा विश्वविद्यालयका विद्यार्थीहरूलाई गुणस्तरीय शैक्षिक स्रोतहरू प्रदान गर्न जारी राख्न हामीलाई मद्दत गर्नुहोस्। तपाईंको समर्थनले सयौं विद्यार्थीहरूको शैक्षिक यात्रामा वास्तविक फरक पार्छ।',
-    'support.financialSupport': 'आर्थिक सहयोग',
-    'support.financialDesc': 'प्लेटफर्म मर्मत र सुधार गर्न हामीलाई मद्दत गर्नुहोस्',
-    'support.monthlyExpense': 'मासिक खर्च:',
-    
-    // Contact Us
-    'contact.title': 'हामीलाई सम्पर्क गर्नुहोस्',
-    'contact.subtitle': 'पीयू नोट्स टोलीसँग सम्पर्कमा रहनुहोस्। हामी तपाईंका कुनै पनि प्रश्न वा चिन्ताहरूमा मद्दत गर्न यहाँ छौं।',
-    'contact.directContact': 'प्रत्यक्ष सम्पर्क',
-    'contact.directDesc': 'इमेलमार्फत प्रत्यक्ष हामीसँग सम्पर्क गर्नुहोस्',
-    'contact.joinCommunity': 'हाम्रो समुदायमा सामेल हुनुहोस्',
-    'contact.joinDesc': 'विभिन्न प्लेटफर्महरूमा हामी र अन्य विद्यार्थीहरूसँग जडान गर्नुहोस्',
+    'home.regularUpdatesDesc': 'पाठ्यक्रम परिवर्तनहरूसँग तालमेल राख्न नियमित रूपमा नयाँ सामग्री थपिन्छ।',
+    'home.aboutTitle': 'PUNotes बारे',
+    'home.aboutDesc1': 'PUNotes को स्थापना २०२२ मा पोखरा विश्वविद्यालयका विद्यार्थीहरूका लागि गुणस्तरीय शैक्षिक स्रोतहरूमा पहुँचलाई लोकतान्त्रिक बनाउने उद्देश्यले गरिएको थियो। हामी विश्वास गर्छौं कि प्रत्येक विद्यार्थीले आफ्नो पृष्ठभूमि वा परिस्थितिको परवाह नगरी व्यापक अध्ययन सामग्रीहरूमा पहुँच पाउने हक छ।',
+    'home.aboutDesc2': 'हाम्रो प्लेटफर्मले विद्यार्थीहरू बीचको पुल काम गर्छ, सहयोगी शिक्षा वातावरणलाई बढावा दिँदै जहाँ ज्ञान स्वतन्त्र रूपमा साझा गरिन्छ। विस्तृत नोटहरूदेखि अघिल्लो प्रश्न पत्रहरूसम्म, हामी PU पाठ्यक्रमसँग प्रत्यक्ष रूपमा मेल खाने सामग्री संकलन गर्छौं।',
+    'home.aboutDesc3': 'सरोज पोखरेल र राहुल कँवरद्वारा स्थापना र संचालन गरिएको, PUNotes हाम्रो अद्भुत विद्यार्थी समुदायको सहयोगमा निरन्तर बढिरहेको छ। सँगै, हामी पोखरा विश्वविद्यालयको लागि सबैभन्दा व्यापक शैक्षिक स्रोत केन्द्र निर्माण गरिरहेका छौं।',
     
     // Common
     'common.poweredBy': 'द्वारा संचालित',
-    'common.adspireLabs': 'एडस्पायर ल्याब्स',
+    'common.adspireLabs': 'AdspireLabs',
     'common.tagline': 'शैक्षिक उत्कृष्टताका लागि नवीन समाधानहरू निर्माण गर्दै',
+    'common.search': 'खोज्नुहोस्...',
+    'common.filter': 'फिल्टर',
+    'common.all': 'सबै',
+    'common.loading': 'लोड हुँदै...',
+    'common.noResults': 'कुनै नतिजा फेला परेन',
+    'common.tryAdjusting': 'तपाईंको खोज वा फिल्टर मापदण्ड समायोजन गर्ने प्रयास गर्नुहोस्',
   }
 };
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<'en' | 'np'>('en');
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [language, setLanguage] = useState<Language>('en');
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations['en']] || key;

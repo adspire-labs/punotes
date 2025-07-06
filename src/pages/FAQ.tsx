@@ -46,24 +46,24 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background dark:bg-background">
       <Navigation />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <HelpCircle className="h-12 w-12 text-blue-600" />
+            <HelpCircle className="h-12 w-12 text-blue-600 dark:text-blue-400" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-3xl font-bold text-foreground dark:text-foreground mb-4">Frequently Asked Questions</h1>
+          <p className="text-muted-foreground dark:text-muted-foreground max-w-2xl mx-auto">
             Find answers to common questions about PU Study Hub and how to make the most of our platform.
           </p>
         </div>
 
-        <Card>
+        <Card className="bg-card dark:bg-card border-border dark:border-border">
           <CardHeader>
-            <CardTitle>Common Questions</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-foreground dark:text-foreground">Common Questions</CardTitle>
+            <CardDescription className="text-muted-foreground dark:text-muted-foreground">
               Click on any question to see the answer
             </CardDescription>
           </CardHeader>
@@ -71,10 +71,10 @@ const FAQ = () => {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
+                  <AccordionTrigger className="text-left text-foreground dark:text-foreground">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent>
+                  <AccordionContent className="text-muted-foreground dark:text-muted-foreground">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -84,17 +84,17 @@ const FAQ = () => {
         </Card>
 
         {/* Contact Section */}
-        <Card className="mt-8">
+        <Card className="mt-8 bg-card dark:bg-card border-border dark:border-border">
           <CardHeader>
-            <CardTitle>Still have questions?</CardTitle>
+            <CardTitle className="text-foreground dark:text-foreground">Still have questions?</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-600 mb-4">
+            <p className="text-muted-foreground dark:text-muted-foreground mb-4">
               If you can't find the answer you're looking for, feel free to reach out to us through our Support page.
             </p>
             <a 
               href="/support-us" 
-              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-colors"
             >
               Contact Support
             </a>
@@ -102,14 +102,14 @@ const FAQ = () => {
         </Card>
 
         {/* Footer */}
-        <div className="text-center mt-12 pt-8 border-t border-gray-200">
-          <p className="text-sm text-gray-500 mb-2">
-            Powered by <span className="text-blue-600 font-semibold">AdspireLabs</span>
+        <footer className="text-center mt-12 pt-8 border-t border-border dark:border-border">
+          <p className="text-sm text-muted-foreground dark:text-muted-foreground mb-2">
+            Powered by <span className="text-blue-600 dark:text-blue-400 font-semibold">AdspireLabs</span>
           </p>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-muted-foreground dark:text-muted-foreground">
             Building innovative solutions for educational excellence
           </p>
-        </div>
+        </footer>
       </div>
     </div>
   );
