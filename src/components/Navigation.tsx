@@ -1,114 +1,127 @@
 
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Switch } from '@/components/ui/switch';
-import { Menu, BookOpen, Upload, Video, Sun, Moon } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Menu, X, Sun, Moon, BookOpen, Languages } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
   const { theme, setTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   const navItems = [
-    { name: 'Home', href: '/', icon: BookOpen },
-    { name: 'Study Materials', href: '/study-materials', icon: BookOpen },
-    { name: 'Additional Resources', href: '/additional-resources', icon: Video },
-    { name: 'Submit Materials', href: '/submit-materials', icon: Upload },
+    { name: t('nav.studyMaterials'), path: '/study-materials' },
+    { name: t('nav.additionalResources'), path: '/additional-resources' },
+    { name: t('nav.submitMaterials'), path: '/submit-materials' },
+    { name: t('nav.faq'), path: '/faq' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   return (
-    <nav className="bg-background border-b sticky top-0 z-50 shadow-sm">
+    <nav className="bg-background dark:bg-background border-b border-border dark:border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <BookOpen className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-foreground">PU Study Hub</span>
-          </Link>
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link to="/" className="flex items-center" onClick={closeMenu}>
+              <BookOpen className="h-8 w-8 text-primary dark:text-primary mr-2" />
+              <span className="text-xl font-bold text-foreground dark:text-foreground">
+                {t('home.title')}
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link key={item.name} to={item.href}>
-                  <Button
-                    variant={isActive(item.href) ? "default" : "ghost"}
-                    className="flex items-center space-x-1"
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span>{item.name}</span>
-                  </Button>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="text-foreground dark:text-foreground hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                >
+                  {item.name}
                 </Link>
-              );
-            })}
-            
-            {/* Dark Mode Toggle */}
-            <div className="flex items-center space-x-2 ml-4">
-              <Sun className="h-4 w-4" />
-              <Switch
-                checked={theme === 'dark'}
-                onCheckedChange={toggleTheme}
-              />
-              <Moon className="h-4 w-4" />
+              ))}
             </div>
           </div>
 
-          {/* Mobile Navigation */}
-          <div className="md:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="flex flex-col space-y-4 mt-8">
-                  {navItems.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <Button
-                          variant={isActive(item.href) ? "default" : "ghost"}
-                          className="w-full justify-start flex items-center space-x-2"
-                        >
-                          <Icon className="h-4 w-4" />
-                          <span>{item.name}</span>
-                        </Button>
-                      </Link>
-                    );
-                  })}
-                  
-                  {/* Mobile Dark Mode Toggle */}
-                  <div className="flex items-center justify-between pt-4 border-t">
-                    <span className="text-sm font-medium">Dark Mode</span>
-                    <div className="flex items-center space-x-2">
-                      <Sun className="h-4 w-4" />
-                      <Switch
-                        checked={theme === 'dark'}
-                        onCheckedChange={toggleTheme}
-                      />
-                      <Moon className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+          {/* Theme Toggle and Language Switcher */}
+          <div className="hidden md:flex items-center space-x-2">
+            <Select value={language} onValueChange={(value: 'en' | 'np') => setLanguage(value)}>
+              <SelectTrigger className="w-20 h-8 bg-background dark:bg-background border-input dark:border-input">
+                <Languages className="h-3 w-3 mr-1" />
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="bg-popover dark:bg-popover border-border dark:border-border">
+                <SelectItem value="en" className="text-popover-foreground dark:text-popover-foreground text-xs">EN</SelectItem>
+                <SelectItem value="np" className="text-popover-foreground dark:text-popover-foreground text-xs">नेपाली</SelectItem>
+              </SelectContent>
+            </Select>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-foreground dark:text-foreground hover:text-primary dark:hover:text-primary h-8 w-8 p-0"
+            >
+              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center space-x-2">
+            <Select value={language} onValueChange={(value: 'en' | 'np') => setLanguage(value)}>
+              <SelectTrigger className="w-16 h-8 bg-background dark:bg-background border-input dark:border-input">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="bg-popover dark:bg-popover border-border dark:border-border">
+                <SelectItem value="en" className="text-popover-foreground dark:text-popover-foreground text-xs">EN</SelectItem>
+                <SelectItem value="np" className="text-popover-foreground dark:text-popover-foreground text-xs">नेपाली</SelectItem>
+              </SelectContent>
+            </Select>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-foreground dark:text-foreground hover:text-primary dark:hover:text-primary h-8 w-8 p-0"
+            >
+              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </Button>
+            
+            <button
+              onClick={toggleMenu}
+              className="text-foreground dark:text-foreground hover:text-primary dark:hover:text-primary focus:outline-none focus:text-primary dark:focus:text-primary"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background dark:bg-background border-t border-border dark:border-border">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="text-foreground dark:text-foreground hover:text-primary dark:hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                onClick={closeMenu}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -14,29 +14,32 @@ import FAQ from "./pages/FAQ";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "next-themes";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/study-materials" element={<StudyMaterials />} />
-            <Route path="/additional-resources" element={<AdditionalResources />} />
-            <Route path="/submit-materials" element={<SubmitMaterials />} />
-            <Route path="/support-us" element={<SupportUs />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/admin-materials" element={<AdminMaterials />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/study-materials" element={<StudyMaterials />} />
+              <Route path="/additional-resources" element={<AdditionalResources />} />
+              <Route path="/submit-materials" element={<SubmitMaterials />} />
+              <Route path="/support-us" element={<SupportUs />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/admin-materials" element={<AdminMaterials />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
     </ThemeProvider>
   </QueryClientProvider>
 );
