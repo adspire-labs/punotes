@@ -1,6 +1,4 @@
-
 import Navigation from '@/components/Navigation';
-import SupportAndContactCards from '@/components/SupportAndContactCards';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Users, Zap, RefreshCw, ArrowRight, CheckCircle, Mail, Heart } from 'lucide-react';
@@ -206,8 +204,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-
-      <SupportAndContactCards />
     </div>
   );
 };
