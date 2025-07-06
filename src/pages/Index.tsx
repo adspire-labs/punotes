@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 import SupportAndContactCards from '@/components/SupportAndContactCards';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Users, Zap, RefreshCw, ArrowRight, CheckCircle, Mail } from 'lucide-react';
+import { BookOpen, Users, Zap, RefreshCw, ArrowRight, CheckCircle, Mail, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -172,13 +172,38 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-card dark:bg-card border-t border-border dark:border-border py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-muted-foreground dark:text-muted-foreground mb-2">
-            {t('common.poweredBy')} <span className="text-blue-600 dark:text-blue-400 font-semibold">{t('common.adspireLabs')}</span>
-          </p>
-          <p className="text-xs text-muted-foreground dark:text-muted-foreground">
-            {t('common.tagline')}
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Support Section */}
+          <div className="text-center mb-6 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <div className="flex items-center justify-center mb-3">
+              <Heart className="h-5 w-5 text-red-500 mr-2" />
+              <h3 className="text-lg font-semibold text-foreground dark:text-foreground">Support Us</h3>
+            </div>
+            <p className="text-muted-foreground dark:text-muted-foreground mb-4">
+              Help us maintain and improve the platform for all PU students.
+            </p>
+            <Button asChild variant="default" size="sm">
+              <Link to="/support-us">Support Now</Link>
+            </Button>
+          </div>
+
+          {/* Copyright Notice */}
+          <div className="text-center mb-4">
+            <p className="text-xs text-muted-foreground dark:text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+              As this website is community driven, it may contain copyrighted content. We respect the rights of copyright owners. 
+              If you are a copyright owner, or are authorized to act on behalf of one, let us know and we will remove it.
+            </p>
+          </div>
+
+          {/* Footer Credits */}
+          <div className="text-center">
+            <p className="text-sm text-muted-foreground dark:text-muted-foreground mb-2">
+              {t('common.poweredBy')} <span className="text-blue-600 dark:text-blue-400 font-semibold">{t('common.adspireLabs')}</span>
+            </p>
+            <p className="text-xs text-muted-foreground dark:text-muted-foreground">
+              {t('common.tagline')}
+            </p>
+          </div>
         </div>
       </footer>
 
