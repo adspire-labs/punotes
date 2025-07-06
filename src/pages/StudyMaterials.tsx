@@ -97,7 +97,7 @@ const StudyMaterials = () => {
           </p>
         </div>
 
-        {/* BE Study Materials Section */}
+        {/* BE Study Materials Sections*/} 
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>BE Study Materials</CardTitle>
@@ -108,34 +108,7 @@ const StudyMaterials = () => {
           <CardContent>
             <div className="bg-orange-50 rounded-lg p-6">
               <p className="text-gray-700 mb-4">
-                You can search BE notes using this tool below.
-              </p>
-              <Button asChild variant="outline">
-                <a 
-                  href="https://notesearch.bloggernepal.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Search BE Notes
-                </a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-          {/* Additional Link Study Materials Section */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Additional Resources</CardTitle>
-            <CardDescription>
-              External resources for Bachelor of Engineering students
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="bg-orange-50 rounded-lg p-6">
-              <p className="text-gray-700 mb-4">
-                You can search BE notes using this tool below.
+                You can search BE notes using t tool below.
               </p>
               <Button asChild variant="outline">
                 <a 
