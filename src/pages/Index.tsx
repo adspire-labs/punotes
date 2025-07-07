@@ -129,7 +129,7 @@ const Index = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="text-center p-4 bg-muted/20 dark:bg-muted/10 rounded-lg">
                   <h4 className="text-xl font-semibold text-foreground dark:text-foreground mb-2">Saroj Pokhrel</h4>
-                  <p className="text-muted-foreground dark:text-muted-foreground mb-3">Co-Founder & Developer</p>
+                  <p className="text-muted-foreground dark:text-muted-foreground mb-3">Founder & Developer</p>
                   <div className="flex items-center justify-center space-x-2 text-sm">
                     <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                     <a href="mailto:info@sarozpokhrel.com.np" className="text-blue-600 dark:text-blue-400 hover:underline">
@@ -139,7 +139,7 @@ const Index = () => {
                 </div>
                 <div className="text-center p-4 bg-muted/20 dark:bg-muted/10 rounded-lg">
                   <h4 className="text-xl font-semibold text-foreground dark:text-foreground mb-2">Rahul Kanwar</h4>
-                  <p className="text-muted-foreground dark:text-muted-foreground mb-3">Co-Founder & Developer</p>
+                  <p className="text-muted-foreground dark:text-muted-foreground mb-3">Co-Founder & Manager</p>
                   <div className="flex items-center justify-center space-x-2 text-sm">
                     <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                     <a href="mailto:rahulkanwaredu@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">

@@ -9,35 +9,5 @@
     "type": ["Notes", "Course Material", "Assignment"],
     "driveLink": "/study-materials/nepathya/week-1/nepathya-week-1.pdf",
     "description": "Video editing theory course materials"
-  },
-  {
-    "id": 2,
-    "title": "Digital Marketing Fundamentals",
-    "category": "Digital Marketing",
-    "college": "New Horizon Institute",
-    "batch": "2025",
-    "type": ["Notes", "Case Studies"],
-    "driveLink": "https://drive.google.com/drive/folders/sample2",
-    "description": "Digital marketing strategies, case studies, and practical implementation guides"
-  },
-  {
-    "id": 3,
-    "title": "Video Editing Theory Horizon (June)",
-    "category": "New Horizon Institute",
-    "college": "Kathmandu University",
-    "batch": "2025",
-    "type": ["Workshop Material", "Practice Files"],
-    "driveLink": "https://drive.google.com/drive/folders/sample3",
-    "description": "Professional video editing workshop materials with sample footage"
-  },
-  {
-    "id": 4,
-    "title": "Digital Marketing Bootcamp",
-    "category": "Digital Marketing",
-    "college": "ISMT College Butwal",
-    "batch": "2025",
-    "type": ["Strategy Guide", "Templates"],
-    "driveLink": "https://drive.google.com/drive/folders/sample4",
-    "description": "Complete social media marketing strategy with templates and examples"
   }
 ]
