@@ -60,7 +60,7 @@ const Navigation = () => {
               </SelectTrigger>
               <SelectContent className="bg-popover dark:bg-popover border-border dark:border-border">
                 <SelectItem value="en" className="text-popover-foreground dark:text-popover-foreground text-xs">EN</SelectItem>
-                <SelectItem value="np" className="text-popover-foreground dark:text-popover-foreground text-xs">नेपाली</SelectItem>
+                <SelectItem value="np" className="text-popover-foreground dark:text-popover-foreground text-xs">ने</SelectItem>
               </SelectContent>
             </Select>
             
@@ -82,7 +82,7 @@ const Navigation = () => {
               </SelectTrigger>
               <SelectContent className="bg-popover dark:bg-popover border-border dark:border-border">
                 <SelectItem value="en" className="text-popover-foreground dark:text-popover-foreground text-xs">EN</SelectItem>
-                <SelectItem value="np" className="text-popover-foreground dark:text-popover-foreground text-xs">नेपाली</SelectItem>
+                <SelectItem value="np" className="text-popover-foreground dark:text-popover-foreground text-xs"></SelectItem>
               </SelectContent>
             </Select>
             
