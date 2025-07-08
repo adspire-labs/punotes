@@ -91,7 +91,7 @@ const SubmitMaterials = () => {
           <CardContent>
             <div className="bg-background dark:bg-background rounded-lg border border-border dark:border-border">
               <iframe 
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-9PSpUKqbbCxZK82ZTknKNRVyzv0lxDOim1Sy_E3bDfD85HbF5LoX7ZTSKzMZnxtdeGzDuvZ0gAoc/pubhtml?widget=true&amp;headers=false"
+                src="https://docs.google.com/spreadsheets/d/1hnhoVOZB6t_wMt1_xTNOXtT2RO5ibfYeNl0EvCTpGRs/edit?gid=593044528#gid=593044528"
                 width="100%" 
                 height="500" 
                 className="rounded border w-full"
