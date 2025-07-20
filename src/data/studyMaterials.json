@@ -334,7 +334,7 @@
   {
     "id": 32,
     "availableIn": [
-      { "stream": "bba", "semester": "7" }
+      { "stream": "bba", "semester": "8" }
     ],
     "subject": "Strategic Management",
     "type": ["Notes", "Solutions", "Question Bank"],
@@ -344,7 +344,7 @@
   {
     "id": 33,
     "availableIn": [
-      { "stream": "bba", "semester": "7" }
+      { "stream": "bba", "semester": "8" }
     ],
     "subject": "Introduction to International Business",
     "type": ["Notes", "Solutions", "Question Bank"],
@@ -354,7 +354,7 @@
   {
     "id": 34,
     "availableIn": [
-      { "stream": "bba", "semester": "7" }
+      { "stream": "bba", "semester": "8" }
     ],
     "subject": "Essentials of E-Business",
     "type": ["Notes", "Solutions", "Question Bank"],
