@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ExternalLink, BookOpen, Search, Filter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import studyMaterialsData from '@/data/studyMaterials.json';
+import beStudyMaterialsData from '@/data/beStudyMaterials.json';
 
 interface StreamSemesterPair {
   stream: string;
@@ -29,9 +30,9 @@ const StudyMaterials = () => {
   const [selectedSemester, setSelectedSemester] = useState<string>('all');
   const [selectedType, setSelectedType] = useState<string>('all');
 
-  // Sort materials alphabetically by subject name
+  // Combine and sort materials alphabetically by subject name
   const materials: StudyMaterial[] = useMemo(() => {
-    return [...studyMaterialsData].sort((a, b) => a.subject.localeCompare(b.subject));
+    return [...studyMaterialsData, ...beStudyMaterialsData].sort((a, b) => a.subject.localeCompare(b.subject));
   }, []);
 
   const filteredMaterials = useMemo(() => {
@@ -98,7 +99,7 @@ const StudyMaterials = () => {
           </p>
         </div>
 
-        {/* BE Study Materials Sections*/} 
+        {/* BE Study Materials Integration*/} 
         <Card className="mb-8 bg-card dark:bg-card border-border dark:border-border">
           <CardHeader>
             <CardTitle className="text-foreground dark:text-foreground">{t('study.beTitle')}</CardTitle>
@@ -107,21 +108,36 @@ const StudyMaterials = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6">
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                {t('study.beNote')}
-              </p>
-              <Button asChild variant="outline">
-                <a 
-                  href="https://notesearch.bloggernepal.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  {t('study.searchBE')}
-                </a>
-              </Button>
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <BookOpen className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    Complete BE Study Materials Now Available!
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Access comprehensive study materials for all BE semesters including notes, previous year questions, 
+                    lab materials, and resources directly integrated from the NCIT community repository. 
+                    Use the filters below to find materials for your specific semester and subject.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="inline-block bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">
+                      35+ Subjects
+                    </span>
+                    <span className="inline-block bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">
+                      All 8 Semesters
+                    </span>
+                    <span className="inline-block bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">
+                      Notes & Code
+                    </span>
+                    <span className="inline-block bg-orange-100 dark:bg-orange-800 text-orange-800 dark:text-orange-200 text-xs px-2 py-1 rounded">
+                      Previous Years
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -160,6 +176,7 @@ const StudyMaterials = () => {
                     <SelectItem value="bba" className="text-popover-foreground dark:text-popover-foreground">BBA</SelectItem>
                     <SelectItem value="bi" className="text-popover-foreground dark:text-popover-foreground">BBA BI</SelectItem>
                     <SelectItem value="bca" className="text-popover-foreground dark:text-popover-foreground">BCA</SelectItem>
+                    <SelectItem value="be" className="text-popover-foreground dark:text-popover-foreground">BE</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

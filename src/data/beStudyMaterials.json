@@ -1,0 +1,366 @@
+[
+  {
+    "id": 1001,
+    "availableIn": [
+      { "stream": "be", "semester": "1" }
+    ],
+    "subject": "Chemistry (CHM 111)",
+    "type": ["Notes", "Books", "Resources"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CHM%20111%20-%20Chemistry",
+    "description": "Complete Chemistry materials including notes, books and lab resources for BE first semester."
+  },
+  {
+    "id": 1002,
+    "availableIn": [
+      { "stream": "be", "semester": "1" }
+    ],
+    "subject": "Programming in C (CMP 113)",
+    "type": ["Notes", "Programming Materials", "Lab Exercises"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20113%20-%20Programming%20in%20C",
+    "description": "C Programming fundamentals, notes, exercises and lab materials for beginners."
+  },
+  {
+    "id": 1003,
+    "availableIn": [
+      { "stream": "be", "semester": "1" }
+    ],
+    "subject": "Problem Solving Techniques (CMP 114)",
+    "type": ["Notes", "Problem Sets", "Solutions"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20114_PST-Problem%20Solving%20Techniques",
+    "description": "Algorithmic thinking, problem solving methodologies and computational techniques."
+  },
+  {
+    "id": 1004,
+    "availableIn": [
+      { "stream": "be", "semester": "2" }
+    ],
+    "subject": "Object Oriented Programming in C++ (CMP 115)",
+    "type": ["Notes", "Code Examples", "Projects"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20115_Object%20Oriented%20Programming%20in%20C%2B%2B",
+    "description": "C++ programming, OOP concepts, classes, objects and advanced programming techniques."
+  },
+  {
+    "id": 1005,
+    "availableIn": [
+      { "stream": "be", "semester": "3" }
+    ],
+    "subject": "Programming Technology (CMP 211)",
+    "type": ["Notes", "Lab Materials", "Projects"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20211_PT_Programming%20Technology",
+    "description": "Advanced programming concepts, frameworks and modern development technologies."
+  },
+  {
+    "id": 1006,
+    "availableIn": [
+      { "stream": "be", "semester": "3" }
+    ],
+    "subject": "Programming in Java (CMP 212)",
+    "type": ["Notes", "Code Examples", "Projects"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20212_Programming%20in%20Java",
+    "description": "Java programming fundamentals, OOP in Java, GUI development and enterprise applications."
+  },
+  {
+    "id": 1007,
+    "availableIn": [
+      { "stream": "be", "semester": "3" }
+    ],
+    "subject": "Web Technology (CMP 213)",
+    "type": ["Notes", "Code Examples", "Web Projects"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20213_WT-Web%20Technology",
+    "description": "HTML, CSS, JavaScript, web frameworks and modern web development practices."
+  },
+  {
+    "id": 1008,
+    "availableIn": [
+      { "stream": "be", "semester": "3" }
+    ],
+    "subject": "Microprocessors and Assembly Language Programming (CMP 214)",
+    "type": ["Notes", "Assembly Code", "Lab Materials"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20214_MALP-Microprocessors%20and%20Assembly%20Language%20Programming",
+    "description": "Microprocessor architecture, assembly language programming and embedded systems."
+  },
+  {
+    "id": 1009,
+    "availableIn": [
+      { "stream": "be", "semester": "4" }
+    ],
+    "subject": "Software Engineering Fundamentals (CMP 220)",
+    "type": ["Notes", "Case Studies", "Project Templates"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20220_SEF-Software%20Engineering%20Fundamentals",
+    "description": "Software development lifecycle, methodologies, design patterns and project management."
+  },
+  {
+    "id": 1010,
+    "availableIn": [
+      { "stream": "be", "semester": "4" }
+    ],
+    "subject": "Data Structures and Algorithms (CMP 225)",
+    "type": ["Notes", "Algorithm Implementations", "Problem Sets"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20225_DSA-Data%20Structures%20And%20Algorithms",
+    "description": "Fundamental data structures, algorithms, complexity analysis and problem solving."
+  },
+  {
+    "id": 1011,
+    "availableIn": [
+      { "stream": "be", "semester": "4" }
+    ],
+    "subject": "Database Management System (CMP 226)",
+    "type": ["Notes", "SQL Scripts", "Database Projects"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20226_DBMS_Database%20Management%20System",
+    "description": "Database design, SQL, normalization, transactions and database administration."
+  },
+  {
+    "id": 1012,
+    "availableIn": [
+      { "stream": "be", "semester": "5" }
+    ],
+    "subject": "Computer Graphics (CMP 241)",
+    "type": ["Notes", "Graphics Code", "Visual Projects"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20241_CG-Computer%20Graphics",
+    "description": "2D/3D graphics, rendering algorithms, OpenGL programming and visual computing."
+  },
+  {
+    "id": 1013,
+    "availableIn": [
+      { "stream": "be", "semester": "5" }
+    ],
+    "subject": "System Programming (CMP 311)",
+    "type": ["Notes", "System Code", "Lab Exercises"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20311_SP-System%20Programming",
+    "description": "System-level programming, compilers, interpreters and low-level system operations."
+  },
+  {
+    "id": 1014,
+    "availableIn": [
+      { "stream": "be", "semester": "5" }
+    ],
+    "subject": "Principles of Programming Language (CMP 312)",
+    "type": ["Notes", "Language Comparisons", "Compiler Design"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20312_PoPL-Principles%20of%20Programming%20Language",
+    "description": "Programming language paradigms, syntax, semantics and compiler construction."
+  },
+  {
+    "id": 1015,
+    "availableIn": [
+      { "stream": "be", "semester": "6" }
+    ],
+    "subject": "Operating System (CMP 320)",
+    "type": ["Notes", "System Code", "Lab Materials"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20320_OS_Operating%20system",
+    "description": "OS concepts, process management, memory management, file systems and security."
+  },
+  {
+    "id": 1016,
+    "availableIn": [
+      { "stream": "be", "semester": "6" }
+    ],
+    "subject": "Object Oriented Design and Modeling through UML (CMP 321)",
+    "type": ["Notes", "UML Diagrams", "Design Patterns"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20321_OODM-Object%20Oriented%20Design%20and%20Modeling%20through%20UML",
+    "description": "UML modeling, object-oriented design principles and software architecture."
+  },
+  {
+    "id": 1017,
+    "availableIn": [
+      { "stream": "be", "semester": "6" }
+    ],
+    "subject": "Object Oriented Software Development (CMP 322)",
+    "type": ["Notes", "Development Projects", "Frameworks"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20322_OOSD-Object%20Oriented%20Software%20Development",
+    "description": "Advanced OOP, software development frameworks and enterprise application development."
+  },
+  {
+    "id": 1018,
+    "availableIn": [
+      { "stream": "be", "semester": "6" }
+    ],
+    "subject": "Analysis and Design of Algorithm (CMP 325)",
+    "type": ["Notes", "Algorithm Analysis", "Optimization"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20325_ADA-Analysis%20and%20Design%20of%20Algorithm",
+    "description": "Advanced algorithms, complexity analysis, optimization techniques and algorithm design."
+  },
+  {
+    "id": 1019,
+    "availableIn": [
+      { "stream": "be", "semester": "6" }
+    ],
+    "subject": "Theory of Computation (CMP 326)",
+    "type": ["Notes", "Mathematical Proofs", "Theoretical Materials"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20326_TOC_Theory%20of%20Computation/Notes",
+    "description": "Automata theory, formal languages, computability and computational complexity."
+  },
+  {
+    "id": 1020,
+    "availableIn": [
+      { "stream": "be", "semester": "7" }
+    ],
+    "subject": "Applied Operating System (CMP 331)",
+    "type": ["Notes", "System Administration", "Practical Labs"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20331_AOS-Applied%20Operating%20System",
+    "description": "Advanced OS concepts, system administration and practical operating system applications."
+  },
+  {
+    "id": 1021,
+    "availableIn": [
+      { "stream": "be", "semester": "7" }
+    ],
+    "subject": "Computer Architecture (CMP 332)",
+    "type": ["Notes", "Hardware Design", "Performance Analysis"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20332_CA_Computer%20Architecture",
+    "description": "Computer organization, processor design, memory systems and performance optimization."
+  },
+  {
+    "id": 1022,
+    "availableIn": [
+      { "stream": "be", "semester": "7" }
+    ],
+    "subject": "Computer Organization and Architecture (CMP 334)",
+    "type": ["Notes", "Hardware Concepts", "System Design"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20334_COA-Computer%20Organization%20and%20Architecture",
+    "description": "Computer hardware organization, instruction sets and computer system architecture."
+  },
+  {
+    "id": 1023,
+    "availableIn": [
+      { "stream": "be", "semester": "7" }
+    ],
+    "subject": "Computer Networks (CMP 335)",
+    "type": ["Notes", "Network Labs", "Protocol Analysis"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20335_CN-Computer%20Networks",
+    "description": "Network protocols, TCP/IP, network security and distributed system communication."
+  },
+  {
+    "id": 1024,
+    "availableIn": [
+      { "stream": "be", "semester": "7" }
+    ],
+    "subject": "Multimedia Systems (CMP 341)",
+    "type": ["Notes", "Media Projects", "Compression Techniques"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20341_MMS-Multimedia%20Systems",
+    "description": "Digital media, multimedia processing, compression algorithms and interactive systems."
+  },
+  {
+    "id": 1025,
+    "availableIn": [
+      { "stream": "be", "semester": "7" }
+    ],
+    "subject": "Simulation and Modeling (CMP 350)",
+    "type": ["Notes", "Simulation Models", "Mathematical Analysis"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20350_SNM-Simulation%20and%20Modeling",
+    "description": "System modeling, simulation techniques and computational analysis methods."
+  },
+  {
+    "id": 1026,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Software Project Management (CMP 420)",
+    "type": ["Notes", "Project Templates", "Management Tools"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20420_SPM%20-%20Software%20Project%20Management",
+    "description": "Project planning, team management, software metrics and project lifecycle management."
+  },
+  {
+    "id": 1027,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Software Testing Verification Validation and QA (CMP 421)",
+    "type": ["Notes", "Testing Frameworks", "QA Processes"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20421_Software%20Testing%20Verification%20Validation%20and%20QA",
+    "description": "Software testing methodologies, quality assurance and verification techniques."
+  },
+  {
+    "id": 1028,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Mobile and Wireless Communication (CMM 420)",
+    "type": ["Notes", "Network Analysis", "Communication Protocols"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMM%20420%20-%20Mobile%20and%20Wireliess%20Communication%20(MWC)",
+    "description": "Mobile communication systems, wireless protocols and network technologies."
+  },
+  {
+    "id": 1029,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Real Time Systems (CMP 430)",
+    "type": ["Notes", "System Design", "Embedded Programming"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20430_RTS-Real%20Time%20Systems",
+    "description": "Real-time system design, embedded systems and time-critical applications."
+  },
+  {
+    "id": 1030,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Distributed Systems (CMP 435)",
+    "type": ["Notes", "Distributed Algorithms", "System Architecture"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20435_DS-Distributed%20Systems",
+    "description": "Distributed computing, consensus algorithms and large-scale system design."
+  },
+  {
+    "id": 1031,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Network Programming (CMP 436)",
+    "type": ["Notes", "Network Code", "Socket Programming"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20436_NP-Network%20Programming",
+    "description": "Socket programming, network application development and distributed programming."
+  },
+  {
+    "id": 1032,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Image Processing and Pattern Recognition (CMP 441)",
+    "type": ["Notes", "Image Processing Code", "Computer Vision"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20441_IPPR%20-%20Image%20Processing%20and%20Pattern%20Recognition",
+    "description": "Digital image processing, pattern recognition algorithms and computer vision techniques."
+  },
+  {
+    "id": 1033,
+    "availableIn": [
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Artificial Intelligence and Neural Network (CMP 457)",
+    "type": ["Notes", "AI Algorithms", "Neural Network Models"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/CMP%20457_AINN-Artificial%20Intelligence%20and%20Neural%20Network",
+    "description": "AI fundamentals, machine learning algorithms and neural network architectures."
+  },
+  {
+    "id": 1034,
+    "availableIn": [
+      { "stream": "be", "semester": "1" },
+      { "stream": "be", "semester": "2" },
+      { "stream": "be", "semester": "3" },
+      { "stream": "be", "semester": "4" },
+      { "stream": "be", "semester": "5" },
+      { "stream": "be", "semester": "6" },
+      { "stream": "be", "semester": "7" },
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "BE Old Questions Collection",
+    "type": ["Question Papers", "Previous Years", "Exam Preparation"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/B.E.%20Old%20Questions%20Collection",
+    "description": "Comprehensive collection of previous year question papers for all BE semesters and subjects."
+  },
+  {
+    "id": 1035,
+    "availableIn": [
+      { "stream": "be", "semester": "1" },
+      { "stream": "be", "semester": "2" },
+      { "stream": "be", "semester": "3" },
+      { "stream": "be", "semester": "4" },
+      { "stream": "be", "semester": "5" },
+      { "stream": "be", "semester": "6" },
+      { "stream": "be", "semester": "7" },
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "BE Syllabus",
+    "type": ["Curriculum", "Course Structure", "Academic Guidelines"],
+    "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/B.E.%20Syllabus",
+    "description": "Complete BE syllabus for all semesters including course structure and academic guidelines."
+  }
+]
