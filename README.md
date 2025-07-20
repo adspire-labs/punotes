@@ -6,7 +6,7 @@
 
 ## 🌐 Website
 
-**Live URL**: [https://punotes.vercel.app](https://punotes.vercel.app)  
+**Live URL**: [https://pu-study-hub.vercel.app/](https://pu-study-hub.vercel.app/)  
 *(Custom domain coming soon)*
 
 ---
