@@ -2,12 +2,32 @@
 [
   {
     "id": 1,
-    "title": "Video Editing Theory Nepathya (July)",
+    "title": "Video Editing Theory & Assignment-1 (July)",
     "category": "Video Editing",
     "college": "Nepathya College",
     "batch": "2025",
     "type": ["Notes", "Course Material", "Assignment"],
     "driveLink": "/study-materials/nepathya/week-1/nepathya-week-1.pdf",
+    "description": "Video editing theory course materials"
+  },
+  {
+    "id": 2,
+    "title": "Video Editing Assignment-2 (July)",
+    "category": "Video Editing",
+    "college": "Nepathya College",
+    "batch": "2025",
+    "type": ["Notes", "Course Material", "Assignment"],
+    "driveLink": "/study-materials/nepathya/week-1/nepathya-assignment-2.pdf",
+    "description": "Video editing theory course materials"
+  },
+  {
+    "id": 3,
+    "title": "Video Editing Assignment-2 (July)",
+    "category": "Video Editing",
+    "college": "New Horizon School",
+    "batch": "2025",
+    "type": ["Notes", "Course Material", "Assignment"],
+    "driveLink": "/study-materials/nepathya/week-1/nepathya-assignment-2.pdf",
     "description": "Video editing theory course materials"
   }
 ]
