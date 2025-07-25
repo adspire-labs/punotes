@@ -16,18 +16,38 @@
     "category": "Video Editing",
     "college": "Nepathya College",
     "batch": "2025",
-    "type": ["Notes", "Course Material", "Assignment"],
+    "type": ["Assignment"],
     "driveLink": "/study-materials/nepathya/week-1/nepathya-assignment-2.pdf",
     "description": "Video editing theory course materials"
   },
   {
     "id": 3,
-    "title": "Video Editing Assignment-2 (July)",
+    "title": "Video Editing Assignment (July)",
+    "category": "Video Editing",
+    "college": "New Horizon School",
+    "batch": "2025",
+    "type": ["Assignment"],
+    "driveLink": "/study-materials/nepathya/week-1/nepathya-assignment-2.pdf",
+    "description": "Video editing theory course materials"
+  },
+  {
+    "id": 4,
+    "title": "Video Editing Theory & Assignment (July)",
     "category": "Video Editing",
     "college": "New Horizon School",
     "batch": "2025",
     "type": ["Notes", "Course Material", "Assignment"],
-    "driveLink": "/study-materials/nepathya/week-1/nepathya-assignment-2.pdf",
+    "driveLink": "/study-materials/nepathya/week-1/nepathya-week-1.pdf",
+    "description": "Video editing theory course materials"
+  },
+  {
+    "id": 1,
+    "title": "Video Editing Theory & Assignment-1",
+    "category": "Video Editing",
+    "college": "Adspire Labs",
+    "batch": "2025",
+    "type": ["Notes", "Course Material", "Assignment"],
+    "driveLink": "/study-materials/nepathya/week-1/nepathya-week-1.pdf",
     "description": "Video editing theory course materials"
   }
 ]
