@@ -17,10 +17,19 @@ export function ManagementNotice() {
     const lastDismissed = localStorage.getItem("punotes-notice-dismissed");
     const today = new Date().toDateString();
     
+    console.log("Management Notice - Last dismissed:", lastDismissed);
+    console.log("Management Notice - Today:", today);
+    
     if (lastDismissed !== today) {
+      console.log("Management Notice - Will show popup");
       // Delay showing the modal slightly to let page load
-      const timer = setTimeout(() => setIsOpen(true), 2000);
+      const timer = setTimeout(() => {
+        console.log("Management Notice - Showing popup now");
+        setIsOpen(true);
+      }, 1000);
       return () => clearTimeout(timer);
+    } else {
+      console.log("Management Notice - Already dismissed today");
     }
   }, []);
 
