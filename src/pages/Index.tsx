@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { BookOpen, Users, Zap, RefreshCw, ArrowRight, CheckCircle, Mail, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { ManagementNotice } from '@/components/ManagementNotice';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -34,6 +35,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-background">
       <Navigation />
+      <ManagementNotice />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-20 overflow-hidden">
