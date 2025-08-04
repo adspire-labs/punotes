@@ -13,6 +13,7 @@ import SupportUs from "./pages/SupportUs";
 import FAQ from "./pages/FAQ";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
+import NepaliLiterature from "./pages/NepaliLiterature";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/admin-materials" element={<AdminMaterials />} />
+              <Route path="/nepali-literature" element={<NepaliLiterature />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

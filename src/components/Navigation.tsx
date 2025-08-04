@@ -19,6 +19,7 @@ const Navigation = () => {
     { name: t('nav.home'), path: '/' },
     { name: t('nav.studyMaterials'), path: '/study-materials' },
     { name: t('nav.additionalResources'), path: '/additional-resources' },
+    { name: t('nav.nepaliLiterature'), path: '/nepali-literature' },
     { name: t('nav.submitMaterials'), path: '/submit-materials' },
   ];
 

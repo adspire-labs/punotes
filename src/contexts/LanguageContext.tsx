@@ -15,6 +15,7 @@ const translations = {
     'nav.home': 'Home',
     'nav.studyMaterials': 'Study Materials',
     'nav.additionalResources': 'Additional Resources',
+    'nav.nepaliLiterature': 'Nepali Literature',
     'nav.submitMaterials': 'Submit Materials',
     'nav.faq': 'FAQ',
     
@@ -77,6 +78,7 @@ const translations = {
     'nav.home': 'होम',
     'nav.studyMaterials': 'अध्ययन सामग्री',
     'nav.additionalResources': 'अतिरिक्त स्रोतहरू',
+    'nav.nepaliLiterature': 'नेपाली साहित्य',
     'nav.submitMaterials': 'सामग्री पेश गर्नुहोस्',
     'nav.faq': 'बारम्बार सोधिने प्रश्नहरू',
     

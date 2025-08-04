@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Muna Madan",
+    "author": "Laxmi Prasad Devkota",
+    "category": "Epic Poetry",
+    "type": ["Classic Literature", "Poetry"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Classic Nepali epic poem about love, sacrifice, and human values."
+  },
+  {
+    "id": 2,
+    "title": "Shiris Ko Phool",
+    "author": "Parijat",
+    "category": "Novel",
+    "type": ["Modern Literature", "Novel"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Award-winning novel exploring themes of love, loss, and social issues."
+  },
+  {
+    "id": 3,
+    "title": "Pagal Basti",
+    "author": "Saru Bhakta",
+    "category": "Novel",
+    "type": ["Contemporary Literature", "Social Commentary"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Novel depicting the struggles of urban life and social transformation."
+  },
+  {
+    "id": 4,
+    "title": "Basain",
+    "author": "Lil Bahadur Chettri",
+    "category": "Novel",
+    "type": ["Rural Literature", "Social Realism"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Classic novel about rural life and the impact of modernization."
+  },
+  {
+    "id": 5,
+    "title": "Jindagani",
+    "author": "Jhamak Ghimire",
+    "category": "Autobiography",
+    "type": ["Biography", "Inspirational"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Inspiring autobiography of overcoming physical challenges through literature."
+  },
+  {
+    "id": 6,
+    "title": "Ghanashyam",
+    "author": "Bal Krishna Sama",
+    "category": "Drama",
+    "type": ["Theatre", "Classical Drama"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Classic Nepali drama exploring themes of love and sacrifice."
+  },
+  {
+    "id": 7,
+    "title": "Seto Dharti",
+    "author": "Amar Neupane",
+    "category": "Novel",
+    "type": ["Historical Fiction", "Cultural Heritage"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Historical novel depicting Nepal's cultural heritage and traditions."
+  },
+  {
+    "id": 8,
+    "title": "Karnali Blues",
+    "author": "Buddhisagar",
+    "category": "Novel",
+    "type": ["Contemporary Literature", "Regional Fiction"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Modern novel exploring life in Nepal's remote Karnali region."
+  },
+  {
+    "id": 9,
+    "title": "Summer Love",
+    "author": "Subin Bhattarai",
+    "category": "Romance Novel",
+    "type": ["Modern Literature", "Romance"],
+    "driveLink": "https://drive.google.com/drive/u/0/folders/1JgfXj-o7Xnov4L4kqLX6i-r4bBW0voPO",
+    "description": "Contemporary romance novel popular among young readers."
+  },
+  {
+    "id": 10,
+    "title": "Doshi Chasma",
+    "author": "BP Koirala",
+    "category": "Short Stories",
+    "type": ["Short Fiction", "Political Literature"],
+    "driveLink": "https://drive.google.com/drive/u/0/folders/1JgfXj-o7Xnov4L4kqLX6i-r4bBW0voPO",
+    "description": "Collection of short stories with political and social themes."
+  },
+  {
+    "id": 11,
+    "title": "Antarman",
+    "author": "Yug Pathak",
+    "category": "Poetry",
+    "type": ["Modern Poetry", "Philosophical"],
+    "driveLink": "https://drive.google.com/drive/u/0/folders/1JgfXj-o7Xnov4L4kqLX6i-r4bBW0voPO",
+    "description": "Collection of modern Nepali poetry exploring inner consciousness."
+  },
+  {
+    "id": 12,
+    "title": "Ghamad Samsher",
+    "author": "Guru Prasad Mainali",
+    "category": "Short Stories",
+    "type": ["Historical Fiction", "Character Study"],
+    "driveLink": "https://drive.google.com/drive/u/0/folders/1JgfXj-o7Xnov4L4kqLX6i-r4bBW0voPO",
+    "description": "Short story exploring historical characters and social dynamics."
+  }
+]
