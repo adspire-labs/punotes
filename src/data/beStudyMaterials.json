@@ -362,5 +362,39 @@
     "type": ["Curriculum", "Course Structure", "Academic Guidelines"],
     "driveLink": "https://github.com/theonlyNischal/Ultimate-Notes-Books-Resources-for-NCIT/tree/master/B.E.%20Syllabus",
     "description": "Complete BE syllabus for all semesters including course structure and academic guidelines."
+  },
+  {
+    "id": 1036,
+    "availableIn": [
+      { "stream": "be", "semester": "1" },
+      { "stream": "be", "semester": "2" },
+      { "stream": "be", "semester": "3" },
+      { "stream": "be", "semester": "4" },
+      { "stream": "be", "semester": "5" },
+      { "stream": "be", "semester": "6" },
+      { "stream": "be", "semester": "7" },
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Nepali Literature Books Collection",
+    "type": ["Books", "Literature", "Reading Materials"],
+    "driveLink": "https://drive.google.com/drive/folders/1pRbbV-anbPzxadZikL79grSGJimzroHt",
+    "description": "Comprehensive collection of Nepali literature books for academic and cultural study."
+  },
+  {
+    "id": 1037,
+    "availableIn": [
+      { "stream": "be", "semester": "1" },
+      { "stream": "be", "semester": "2" },
+      { "stream": "be", "semester": "3" },
+      { "stream": "be", "semester": "4" },
+      { "stream": "be", "semester": "5" },
+      { "stream": "be", "semester": "6" },
+      { "stream": "be", "semester": "7" },
+      { "stream": "be", "semester": "8" }
+    ],
+    "subject": "Additional Nepali Literature Resources",
+    "type": ["Books", "References", "Study Materials"],
+    "driveLink": "https://drive.google.com/drive/u/0/folders/1JgfXj-o7Xnov4L4kqLX6i-r4bBW0voPO",
+    "description": "Extended collection of Nepali literature resources and reference materials for comprehensive study."
   }
 ]
