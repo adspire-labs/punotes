@@ -181,8 +181,8 @@ const ChatBot = () => {
             <MessageCircle className="h-6 w-6" />
           </Button>
         ) : (
-          <Card className="w-80 h-96 flex flex-col bg-background border shadow-2xl">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 bg-primary text-primary-foreground rounded-t-lg">
+          <Card className="w-[90vw] max-w-sm h-[500px] md:w-80 md:h-96 flex flex-col bg-background border shadow-2xl">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 bg-primary text-primary-foreground rounded-t-lg flex-shrink-0">
               <CardTitle className="text-sm font-medium">PU Notes Assistant</CardTitle>
               <Button
                 onClick={() => setIsOpen(false)}
@@ -194,8 +194,8 @@ const ChatBot = () => {
               </Button>
             </CardHeader>
 
-            <CardContent className="flex-1 flex flex-col p-0">
-              <ScrollArea className="flex-1 p-4">
+            <CardContent className="flex-1 flex flex-col p-0 min-h-0">
+              <ScrollArea className="flex-1 p-4 overflow-y-auto">
                 <div className="space-y-3">
                   {messages.map((message) => (
                     <div
@@ -207,13 +207,15 @@ const ChatBot = () => {
                     >
                       <div
                         className={cn(
-                          "max-w-[80%] rounded-lg px-3 py-2 text-sm whitespace-pre-line",
+                          "max-w-[85%] rounded-lg px-3 py-2 text-sm break-words overflow-wrap-anywhere",
                           message.isBot
                             ? "bg-muted text-muted-foreground"
                             : "bg-primary text-primary-foreground"
                         )}
                       >
-                        {message.text}
+                        <div className="whitespace-pre-wrap break-words">
+                          {message.text}
+                        </div>
                         {message.isBot && message.text.includes("study materials") && (
                           <div className="mt-2 space-y-1">
                             {chatOptions.filter(opt => opt.link !== "contact").map((option, index) => (
@@ -221,12 +223,12 @@ const ChatBot = () => {
                                 key={index}
                                 variant="outline"
                                 size="sm"
-                                className="block w-full text-left justify-start h-8 text-xs"
+                                className="block w-full text-left justify-start h-8 text-xs break-words"
                                 onClick={() => handleOptionClick(option)}
                               >
-                                {option.text}
+                                <span className="truncate">{option.text}</span>
                                 {option.link && option.link !== "contact" && (
-                                  <ExternalLink className="h-3 w-3 ml-1" />
+                                  <ExternalLink className="h-3 w-3 ml-1 flex-shrink-0" />
                                 )}
                               </Button>
                             ))}
@@ -238,30 +240,36 @@ const ChatBot = () => {
                 </div>
               </ScrollArea>
 
-              <div className="p-4 border-t">
-                <div className="flex space-x-2">
+              <div className="p-4 border-t bg-background flex-shrink-0">
+                <div className="flex space-x-2 mb-2">
                   <Input
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="Type your message..."
                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                    className="text-sm"
+                    className="text-sm flex-1 min-w-0"
+                    disabled={false}
                   />
-                  <Button onClick={handleSendMessage} size="icon" className="h-9 w-9">
+                  <Button 
+                    onClick={handleSendMessage} 
+                    size="icon" 
+                    className="h-9 w-9 flex-shrink-0"
+                    disabled={!inputValue.trim()}
+                  >
                     <Send className="h-4 w-4" />
                   </Button>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-1 mt-2">
+                <div className="grid grid-cols-2 gap-1">
                   {chatOptions.slice(0, 4).map((option, index) => (
                     <Button
                       key={index}
                       variant="outline"
                       size="sm"
-                      className="text-xs h-7 justify-start"
+                      className="text-xs h-7 justify-start px-2"
                       onClick={() => handleOptionClick(option)}
                     >
-                      {option.text.substring(0, 12)}...
+                      <span className="truncate">{option.text.split(' ')[0]}</span>
                     </Button>
                   ))}
                 </div>
