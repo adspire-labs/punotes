@@ -5,7 +5,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ExternalLink, BookOpen, Search, Filter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navigation from '@/components/Navigation';
-import ChatBot from '@/components/ChatBot';
 import nepaliLiteratureData from '@/data/nepaliLiterature.json';
 
 interface LiteratureBook {
@@ -187,7 +186,6 @@ const NepaliLiterature = () => {
         )}
       </div>
       </div>
-      <ChatBot />
     </>
   );
 };

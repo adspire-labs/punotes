@@ -14,6 +14,7 @@ import FAQ from "./pages/FAQ";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import NepaliLiterature from "./pages/NepaliLiterature";
+import ChatBot from "./components/ChatBot";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
@@ -39,6 +40,7 @@ const App = () => (
               <Route path="/nepali-literature" element={<NepaliLiterature />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <ChatBot />
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
