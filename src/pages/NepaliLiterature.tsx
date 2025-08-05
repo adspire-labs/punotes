@@ -4,6 +4,8 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ExternalLink, BookOpen, Search, Filter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Navigation from '@/components/Navigation';
+import ChatBot from '@/components/ChatBot';
 import nepaliLiteratureData from '@/data/nepaliLiterature.json';
 
 interface LiteratureBook {
@@ -52,7 +54,9 @@ const NepaliLiterature = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
+    <>
+      <Navigation />
+      <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4 flex items-center gap-3">
@@ -182,7 +186,9 @@ const NepaliLiterature = () => {
           </Card>
         )}
       </div>
-    </div>
+      </div>
+      <ChatBot />
+    </>
   );
 };
 
