@@ -1,0 +1,51 @@
+
+[
+  {
+    "id": 1,
+    "title": "Essential Study Tips for NEB Class 12 Physics",
+    "slug": "study-tips-for-neb-class-12-physics",
+    "category": "For +2 Science/Management",
+    "author": "StudyHub Team",
+    "publishDate": "2024-01-15",
+    "readTime": "5 min read",
+    "excerpt": "Master Class 12 Physics with these proven study techniques and exam strategies specifically designed for NEB curriculum.",
+    "content": "Physics can be challenging, but with the right approach, you can excel in your NEB exams. Start by understanding the fundamental concepts before jumping into problem-solving. Create visual diagrams for complex topics like electromagnetic induction and wave mechanics. Practice numerical problems daily and maintain a formula sheet for quick revision.",
+    "tags": ["physics", "class-12", "neb", "study-tips"],
+    "imageUrl": "/blog-images/physics-study-tips.jpg",
+    "seoTitle": "NEB Class 12 Physics Study Tips | Master Physics Exam Preparation",
+    "seoDescription": "Discover effective study tips for NEB Class 12 Physics. Learn proven strategies to excel in your physics exams with our comprehensive guide.",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "BBA Career Opportunities in Nepal",
+    "slug": "bba-career-opportunities-nepal",
+    "category": "For BBA Students",
+    "author": "Career Counselor",
+    "publishDate": "2024-01-10",
+    "readTime": "7 min read",
+    "excerpt": "Explore the diverse career paths available for BBA graduates in Nepal's growing business landscape.",
+    "content": "BBA graduates have numerous opportunities in Nepal's evolving business sector. From banking and finance to digital marketing and entrepreneurship, the possibilities are vast. Consider specializations in areas like human resources, marketing, or finance based on your interests and market demand.",
+    "tags": ["bba", "career", "nepal", "opportunities"],
+    "imageUrl": "/blog-images/bba-careers.jpg",
+    "seoTitle": "BBA Career Opportunities in Nepal | Business Administration Jobs",
+    "seoDescription": "Discover lucrative career opportunities for BBA graduates in Nepal. Learn about job prospects, salary expectations, and growth paths.",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Engineering Mathematics Made Simple",
+    "slug": "engineering-mathematics-made-simple",
+    "category": "For B.E./Engineering Students",
+    "author": "Math Expert",
+    "publishDate": "2024-01-05",
+    "readTime": "6 min read",
+    "excerpt": "Simplify complex engineering mathematics concepts with these effective learning strategies and problem-solving techniques.",
+    "content": "Engineering mathematics forms the foundation of all engineering disciplines. Break down complex problems into smaller, manageable parts. Use graphical representations where possible and practice regularly with previous year questions. Focus on understanding concepts rather than memorizing formulas.",
+    "tags": ["engineering", "mathematics", "problem-solving"],
+    "imageUrl": "/blog-images/engineering-math.jpg",
+    "seoTitle": "Engineering Mathematics Study Guide | Simplified Learning Approach",
+    "seoDescription": "Master engineering mathematics with our simplified study guide. Learn effective techniques for problem-solving and concept understanding.",
+    "featured": true
+  }
+]

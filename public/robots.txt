@@ -1,8 +1,18 @@
+
 User-agent: Googlebot
 Allow: /
+Allow: /study-materials
+Allow: /blog
+Allow: /class-12/
+Allow: /additional-resources
+Allow: /nepali-literature
 
 User-agent: Bingbot
 Allow: /
+Allow: /study-materials
+Allow: /blog
+Allow: /class-12/
+Allow: /additional-resources
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +22,13 @@ Allow: /
 
 User-agent: *
 Allow: /
+Allow: /study-materials
+Allow: /blog
+Allow: /class-12/
+Allow: /additional-resources
+Allow: /nepali-literature
+
+Disallow: /admin-materials
+Disallow: /submit-materials
+
+Sitemap: https://yourdomain.com/sitemap.xml

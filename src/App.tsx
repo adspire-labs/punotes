@@ -14,6 +14,7 @@ import FAQ from "./pages/FAQ";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import NepaliLiterature from "./pages/NepaliLiterature";
+import Blog from "./pages/Blog";
 import ChatBot from "./components/ChatBot";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/admin-materials" element={<AdminMaterials />} />
               <Route path="/nepali-literature" element={<NepaliLiterature />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <ChatBot />

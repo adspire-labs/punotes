@@ -1,0 +1,81 @@
+
+[
+  {
+    "id": 101,
+    "availableIn": [
+      { "stream": "class12", "semester": "science" }
+    ],
+    "subject": "Physics",
+    "type": ["Notes", "Question Bank", "Past Papers", "Solutions", "Model Questions"],
+    "driveLink": "https://drive.google.com/drive/folders/physics-class12-placeholder",
+    "description": "Complete Physics materials for NEB Class 12 including numerical solutions and conceptual notes.",
+    "topics": ["Mechanics", "Thermodynamics", "Optics", "Electricity & Magnetism", "Modern Physics"],
+    "examBoard": "NEB",
+    "level": "Class 12"
+  },
+  {
+    "id": 102,
+    "availableIn": [
+      { "stream": "class12", "semester": "science" }
+    ],
+    "subject": "Chemistry",
+    "type": ["Notes", "Question Bank", "Past Papers", "Solutions", "Model Questions"],
+    "driveLink": "https://drive.google.com/drive/folders/chemistry-class12-placeholder",
+    "description": "Comprehensive Chemistry study materials covering all units of NEB Class 12 syllabus.",
+    "topics": ["Organic Chemistry", "Physical Chemistry", "Inorganic Chemistry", "Applied Chemistry"],
+    "examBoard": "NEB",
+    "level": "Class 12"
+  },
+  {
+    "id": 103,
+    "availableIn": [
+      { "stream": "class12", "semester": "science" }
+    ],
+    "subject": "Biology",
+    "type": ["Notes", "Question Bank", "Past Papers", "Solutions", "Model Questions"],
+    "driveLink": "https://drive.google.com/drive/folders/biology-class12-placeholder",
+    "description": "Complete Biology materials with detailed diagrams and explanations for NEB Class 12.",
+    "topics": ["Cell Biology", "Genetics", "Evolution", "Ecology", "Human Physiology"],
+    "examBoard": "NEB",
+    "level": "Class 12"
+  },
+  {
+    "id": 104,
+    "availableIn": [
+      { "stream": "class12", "semester": "science" }
+    ],
+    "subject": "Mathematics",
+    "type": ["Notes", "Question Bank", "Past Papers", "Solutions", "Model Questions"],
+    "driveLink": "https://drive.google.com/drive/folders/mathematics-class12-placeholder",
+    "description": "Advanced Mathematics materials with step-by-step solutions for NEB Class 12.",
+    "topics": ["Calculus", "Algebra", "Trigonometry", "Statistics", "Vectors"],
+    "examBoard": "NEB",
+    "level": "Class 12"
+  },
+  {
+    "id": 105,
+    "availableIn": [
+      { "stream": "class12", "semester": "science" }
+    ],
+    "subject": "Computer Science",
+    "type": ["Notes", "Question Bank", "Past Papers", "Solutions", "Model Questions"],
+    "driveLink": "https://drive.google.com/drive/folders/computer-science-class12-placeholder",
+    "description": "Complete Computer Science materials including programming concepts and theory.",
+    "topics": ["Programming in C", "Database Management", "Web Technology", "Computer Networks"],
+    "examBoard": "NEB",
+    "level": "Class 12"
+  },
+  {
+    "id": 106,
+    "availableIn": [
+      { "stream": "class12", "semester": "science" }
+    ],
+    "subject": "English",
+    "type": ["Notes", "Question Bank", "Past Papers", "Solutions", "Model Questions"],
+    "driveLink": "https://drive.google.com/drive/folders/english-class12-placeholder",
+    "description": "English study materials with grammar, literature analysis, and writing skills for NEB Class 12.",
+    "topics": ["Grammar", "Literature", "Essay Writing", "Comprehension", "Poetry Analysis"],
+    "examBoard": "NEB",
+    "level": "Class 12"
+  }
+]

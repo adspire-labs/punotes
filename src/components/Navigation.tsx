@@ -18,6 +18,7 @@ const Navigation = () => {
   const navItems = [
     { name: t('nav.home'), path: '/' },
     { name: t('nav.studyMaterials'), path: '/study-materials' },
+    { name: 'Blog', path: '/blog' },
     { name: t('nav.additionalResources'), path: '/additional-resources' },
     { name: t('nav.nepaliLiterature'), path: '/nepali-literature' },
     { name: t('nav.submitMaterials'), path: '/submit-materials' },
