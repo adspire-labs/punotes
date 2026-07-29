@@ -73,7 +73,8 @@ const StudyMaterials = () => {
       'be': 'BE',
       'bsc': 'BSc',
       'bi': 'BBA BI',
-      'class12': 'Class 12 NEB'
+      'class12': 'Class 12 NEB',
+      'mba': 'MBA',
     };
     return streamNames[stream] || stream;
   };
@@ -137,90 +138,8 @@ const StudyMaterials = () => {
             </p>
           </div>
 
-          {/* Class 12 NEB Science Materials Highlight */}
-          <Card className="mb-8 bg-card dark:bg-card border-border dark:border-border">
-            <CardHeader>
-              <CardTitle className="text-foreground dark:text-foreground">Class 12 NEB Science Materials</CardTitle>
-              <CardDescription className="text-muted-foreground dark:text-muted-foreground">
-                Complete study materials for all Class 12 Science subjects as per NEB curriculum
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <BookOpen className="h-8 w-8 text-green-600 dark:text-green-400" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                      NEB Class 12 Science Materials Now Available!
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      Access comprehensive study materials for Physics, Chemistry, Biology, Mathematics, Computer Science, and English. 
-                      All materials are aligned with the latest NEB syllabus and include notes, question banks, past papers, solutions, and model questions.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="inline-block bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">
-                        6 Core Subjects
-                      </span>
-                      <span className="inline-block bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">
-                        NEB Aligned
-                      </span>
-                      <span className="inline-block bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">
-                        Complete Materials
-                      </span>
-                      <span className="inline-block bg-orange-100 dark:bg-orange-800 text-orange-800 dark:text-orange-200 text-xs px-2 py-1 rounded">
-                        Past Papers Included
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* BE Study Materials Integration*/} 
-          <Card className="mb-8 bg-card dark:bg-card border-border dark:border-border">
-            <CardHeader>
-              <CardTitle className="text-foreground dark:text-foreground">{t('study.beTitle')}</CardTitle>
-              <CardDescription className="text-muted-foreground dark:text-muted-foreground">
-                {t('study.beDesc')}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <BookOpen className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                      Complete BE Study Materials Now Available!
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      Access comprehensive study materials for all BE semesters including notes, previous year questions, 
-                      lab materials, and resources directly integrated from the NCIT community repository. 
-                      Use the filters below to find materials for your specific semester and subject.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="inline-block bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">
-                        35+ Subjects
-                      </span>
-                      <span className="inline-block bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">
-                        All 8 Semesters
-                      </span>
-                      <span className="inline-block bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">
-                        Notes & Code
-                      </span>
-                      <span className="inline-block bg-orange-100 dark:bg-orange-800 text-orange-800 dark:text-orange-200 text-xs px-2 py-1 rounded">
-                        Previous Years
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          
+          
 
           {/* Filters */}
           <Card className="mb-8 bg-card dark:bg-card border-border dark:border-border">
@@ -258,6 +177,7 @@ const StudyMaterials = () => {
                       <SelectItem value="bi" className="text-popover-foreground dark:text-popover-foreground">BBA BI</SelectItem>
                       <SelectItem value="bca" className="text-popover-foreground dark:text-popover-foreground">BCA</SelectItem>
                       <SelectItem value="be" className="text-popover-foreground dark:text-popover-foreground">BE</SelectItem>
+                      <SelectItem value="mba" className="text-popover-foreground dark:text-popover-foreground">MBA</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -272,14 +192,14 @@ const StudyMaterials = () => {
                       <SelectItem value="all" className="text-popover-foreground dark:text-popover-foreground">{t('study.allSemesters')}</SelectItem>
                       <SelectItem value="science" className="text-popover-foreground dark:text-popover-foreground">Science</SelectItem>
                       <SelectItem value="management" className="text-popover-foreground dark:text-popover-foreground">Management</SelectItem>
-                      <SelectItem value="1" className="text-popover-foreground dark:text-popover-foreground">1st Semester</SelectItem>
-                      <SelectItem value="2" className="text-popover-foreground dark:text-popover-foreground">2nd Semester</SelectItem>
-                      <SelectItem value="3" className="text-popover-foreground dark:text-popover-foreground">3rd Semester</SelectItem>
-                      <SelectItem value="4" className="text-popover-foreground dark:text-popover-foreground">4th Semester</SelectItem>
-                      <SelectItem value="5" className="text-popover-foreground dark:text-popover-foreground">5th Semester</SelectItem>
-                      <SelectItem value="6" className="text-popover-foreground dark:text-popover-foreground">6th Semester</SelectItem>
-                      <SelectItem value="7" className="text-popover-foreground dark:text-popover-foreground">7th Semester</SelectItem>
-                      <SelectItem value="8" className="text-popover-foreground dark:text-popover-foreground">8th Semester</SelectItem>
+                      <SelectItem value="1" className="text-popover-foreground dark:text-popover-foreground">1st Semester/ Trimester</SelectItem>
+                      <SelectItem value="2" className="text-popover-foreground dark:text-popover-foreground">2nd Semester/ Trimester</SelectItem>
+                      <SelectItem value="3" className="text-popover-foreground dark:text-popover-foreground">3rd Semester/ Trimester</SelectItem>
+                      <SelectItem value="4" className="text-popover-foreground dark:text-popover-foreground">4th Semester/ Trimester</SelectItem>
+                      <SelectItem value="5" className="text-popover-foreground dark:text-popover-foreground">5th Semester/ Trimester</SelectItem>
+                      <SelectItem value="6" className="text-popover-foreground dark:text-popover-foreground">6th Semester/ Trimester</SelectItem>
+                      <SelectItem value="7" className="text-popover-foreground dark:text-popover-foreground">7th Semester/ Trimester</SelectItem>
+                      <SelectItem value="8" className="text-popover-foreground dark:text-popover-foreground">8th Semester/ Trimester</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

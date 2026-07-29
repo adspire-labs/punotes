@@ -360,5 +360,45 @@
     "type": ["Notes", "Solutions", "Question Bank"],
     "driveLink": "https://drive.google.com/drive/folders/1GUPsMBz5plKTzbd72IfViNJOlYKyNDzG?usp=sharing",
     "description": "Complete material for Essentials of E-Business."
+  },
+  {
+    "id": 35,
+    "availableIn": [
+      { "stream": "mba", "semester": "1" }
+    ],
+    "subject": "Accounting For Managerial Decisions",
+    "type": ["Notes", "Solutions", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1Zv0kUBHv1ADZxPHqEkcxGsIJGjjbdLUT?usp=drive_link",
+    "description": "Complete material for Accounting For Managerial Decisions."
+  },
+  {
+    "id": 36,
+    "availableIn": [
+      { "stream": "mba", "semester": "1" }
+    ],
+    "subject": "Statistics For Managers",
+    "type": ["Notes", "Solutions", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1sV2IxhDc_GvqmAIlsMdMY_G4-moRSiWl?usp=drive_link",
+    "description": "Complete material for Statistics For Managers."
+  },
+  {
+    "id": 37,
+    "availableIn": [
+      { "stream": "mba", "semester": "1" }
+    ],
+    "subject": "OB and HRM",
+    "type": ["Notes", "Solutions", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1IsRK2ljD5u_qbkgkW1JeMSjLOozPbfQx?usp=drive_link",
+    "description": "Complete material for OB and HRM."
+  },
+  {
+    "id": 38,
+    "availableIn": [
+      { "stream": "mba", "semester": "1" }
+    ],
+    "subject": "Managerial Economics",
+    "type": ["Notes", "Solutions", "Question Bank"],
+    "driveLink": "https://drive.google.com/drive/folders/1EE228LbRvKZoKMJmrXJ0AwTWYRsF5A3i?usp=drive_link",
+    "description": "Complete material for Managerial Economics."
   }
 ]

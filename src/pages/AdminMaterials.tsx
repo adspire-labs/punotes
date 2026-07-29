@@ -260,6 +260,7 @@ const AdminMaterials = () => {
                       <SelectItem value="bbs">BBS</SelectItem>
                       <SelectItem value="be">BE</SelectItem>
                       <SelectItem value="bsc">BSc</SelectItem>
+                      <SelectItem value="mba">MBA</SelectItem>
                     </SelectContent>
                   </Select>
                   <Select value={pair.semester} onValueChange={(value) => updateStreamSemesterPair(index, 'semester', value)}>
